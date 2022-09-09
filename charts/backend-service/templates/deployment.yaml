@@ -1,0 +1,127 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "hocs-app.name" . }}
+  labels:
+    version: {{ .Values.version }}
+  {{- with .Values.deploymentAnnotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  replicas: {{ .Values.minReplicas }}
+  selector:
+    matchLabels:
+      name: {{ include "hocs-app.name" . }}
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        {{- include "hocs-app.selectorLabels" . | nindent 8 }}
+    spec:
+      initContainers:
+        - name: truststore
+          image: "{{ .Values.truststore.image.repository }}:{{ .Values.truststore.image.version }}"
+          securityContext:
+            {{- include "hocs-app.securityContext" . | nindent 12 }}
+          args:
+            {{ include "truststore.envs" . | nindent 12 }}
+          volumeMounts:
+            - name: certs
+              mountPath: /certs
+            - name: keystore
+              mountPath: /etc/keystore
+            - name: bundle
+              mountPath: /etc/ssl/certs
+              readOnly: true
+          resources:
+            {{- toYaml .Values.truststore.resources | nindent 12 }}
+      containers:
+        - name: proxy
+          image: "{{ .Values.proxy.image.repository }}:{{ .Values.proxy.image.version }}"
+          securityContext:
+            {{- include "hocs-app.securityContext" . | nindent 12 }}
+          env:
+            {{ include "proxy.envs" . | nindent 12 }}
+          volumeMounts:
+            - name: certs
+              mountPath: /certs
+              readOnly: true
+            - name: secrets
+              mountPath: /etc/nginx/secrets
+              readOnly: true
+            - name: auth-secrets
+              mountPath: /etc/nginx/authsecrets
+              readOnly: true
+          ports:
+            - name: https
+              containerPort: {{ .Values.service.targetPort }}
+          resources:
+            {{- toYaml .Values.proxy.resources | nindent 12 }}
+        - name: {{ include "hocs-app.name" . }}
+          image: "{{ .Values.app.image.repository }}:{{ .Values.version }}"
+          securityContext:
+            {{- include "hocs-app.securityContext" . | nindent 12 }}
+          env:
+            - name: JAVA_OPTS
+              value: '-XX:MaxRAMPercentage=70 -Djava.security.egd=file:/dev/./urandom -Djavax.net.ssl.trustStore=/etc/keystore/truststore.jks -Dhttps.proxyHost=hocs-outbound-proxy.{{ .Values.namespace }}.svc.cluster.local -Dhttps.proxyPort=31290 -Dhttp.nonProxyHosts=*.{{ .Values.namespace }}.svc.cluster.local'
+            {{ include "deployment.envs" . | nindent 12 }}
+          resources:
+            {{- toYaml .Values.app.resources | nindent 12 }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.app.port }}
+          startupProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: http
+              httpHeaders:
+                - name: X-probe
+                  value: kubelet
+            initialDelaySeconds: 10
+            periodSeconds: 2
+            failureThreshold: 20
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: http
+              httpHeaders:
+                - name: X-probe
+                  value: kubelet
+              periodSeconds: 2
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: http
+              httpHeaders:
+                - name: X-probe
+                  value: kubelet
+            periodSeconds: 2
+          volumeMounts:
+            - mountPath: /etc/keystore
+              name: keystore
+              readOnly: true
+          lifecycle:
+            preStop:
+              exec:
+                command: [ "sh", "-c", "sleep 20" ]
+      volumes:
+        - name: keystore
+          emptyDir:
+            medium: "Memory"
+        - name: certs
+          emptyDir:
+            medium: "Memory"
+        - name: bundle
+          configMap:
+            name: bundle
+        - name: secrets
+          emptyDir:
+            medium: "Memory"
+        - name: auth-secrets
+          secret:
+            secretName: ui-casework-creds
