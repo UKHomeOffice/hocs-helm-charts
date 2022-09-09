@@ -1,2 +1,0 @@
-{{- define "deployment.envs" }}
-{{- end -}}
