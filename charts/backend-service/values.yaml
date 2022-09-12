@@ -1,0 +1,49 @@
+---
+minReplicas: 2
+maxReplicas: 3
+
+deploymentAnnotations:
+  downscaler/uptime: "Mon-Sun 04:55-23:05 Europe/London"
+
+service:
+  port: 443
+  portName: "http"
+  targetPort: 10443
+
+truststore:
+  enabled: true
+  image:
+    repository: quay.io/ukhomeofficedigital/cfssl-sidekick-jks
+    version: v0.0.9
+  resources:
+    limits:
+      cpu: 300m
+      memory: 96Mi
+    requests:
+      cpu: 100m
+      memory: 96Mi
+
+proxy:
+  enabled: true
+  image:
+    repository: quay.io/ukhomeofficedigital/nginx-proxy
+    version: v4.2.0
+  resources:
+    limits:
+      cpu: 300m
+      memory: 96Mi
+    requests:
+      cpu: 100m
+      memory: 96Mi
+
+app:
+  image: {}
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 896Mi
+    requests:
+      cpu: 200m
+      memory: 896Mi
+  port: 8080
+  preStop: '[ "sh", "-c", "sleep 20" ]'
