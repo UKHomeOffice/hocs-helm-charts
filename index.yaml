@@ -9,4 +9,12 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-generic-backend-service-1.0.1/hocs-generic-backend-service-1.0.1.tgz
     version: 1.0.1
-generated: "2022-09-09T15:14:01.482064367Z"
+  - apiVersion: v2
+    created: "2022-09-12T07:45:04.052501637Z"
+    description: A Helm chart for a generic backend services.
+    digest: e5a628cadde9bb2463d88de791f830cdbeb6209c8ab74d724197a1326f3fcdd8
+    name: hocs-generic-backend-service
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-generic-backend-service-1.0.0/hocs-generic-backend-service-1.0.0.tgz
+    version: 1.0.0
+generated: "2022-09-12T07:45:04.052512837Z"
