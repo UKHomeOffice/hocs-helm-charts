@@ -71,6 +71,9 @@ spec:
           image: "{{ .Values.app.image.repository }}:{{ .Values.version }}"
           securityContext:
             {{- include "hocs-app.securityContext" . | nindent 12 }}
+          envFrom:
+            - configMapRef:
+                name: hocs-queue-config
           env:
             {{ include "deployment.envs" . | nindent 12 }}
           resources:
@@ -80,26 +83,10 @@ spec:
               containerPort: {{ include "hocs-app.port" . }}
           {{ include "healthcheck.envs" . | nindent 10 }}
           volumeMounts:
-            - mountPath: /etc/keystore
-              name: keystore
-              readOnly: true
+            {{ include "volumes.envs" . | nindent 12 }}
           lifecycle:
             preStop:
               exec:
                 command: {{ .Values.app.preStop }}
       volumes:
-        - name: keystore
-          emptyDir:
-            medium: "Memory"
-        - name: certs
-          emptyDir:
-            medium: "Memory"
-        - name: bundle
-          configMap:
-            name: bundle
-        - name: secrets
-          emptyDir:
-            medium: "Memory"
-        - name: auth-secrets
-          secret:
-            secretName: ui-casework-creds
+        {{ include "volumes.envs" . | nindent 8 }}
