@@ -83,7 +83,7 @@ spec:
               containerPort: {{ include "hocs-app.port" . }}
           {{ include "healthcheck.envs" . | nindent 10 }}
           volumeMounts:
-            {{ include "volumes.envs" . | nindent 12 }}
+            {{ include "volumeMounts.envs" . | nindent 12 }}
           lifecycle:
             preStop:
               exec:
