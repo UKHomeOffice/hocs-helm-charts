@@ -38,6 +38,7 @@ proxy:
 
 app:
   image: {}
+  selectorRole: hocs-backend
   resources:
     limits:
       cpu: 1000m
