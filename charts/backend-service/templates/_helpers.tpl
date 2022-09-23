@@ -10,7 +10,7 @@ Selector labels
 */}}
 {{- define "hocs-app.selectorLabels" -}}
 name: {{ include "hocs-app.name" . }}
-role: hocs-backend
+role: {{ tpl .Values.app.selectorRole . }}
 version: {{.Values.version}}
 {{- end }}
 
