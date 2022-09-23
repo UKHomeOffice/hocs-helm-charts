@@ -7,7 +7,7 @@
 - name: DB_HOST
   valueFrom:
     secretKeyRef:
-      name: {{ .Values.namespace }}-casework-rds
+      name: {{ .Release.Namespace }}-casework-rds
       key: host
 */}}
 {{- end -}}
