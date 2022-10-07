@@ -1,0 +1,22 @@
+{{- if .Values.ingress.external.enabled }}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    {{- toYaml .Values.ingress.annotations | nindent 4 }}
+    kubernetes.io/ingress.class: nginx-external
+    ingress.kubernetes.io/whitelist-source-range: {{ .Values.ingress.external.allowedIps | quote }}
+  labels:
+    cert-manager.io/solver: http01
+  name: {{ include "hocs-app.name" . }}
+spec:
+  rules:
+  - host: {{ include "hocs-app.external.domainName" . }}
+    http:
+      paths:
+        {{- toYaml .Values.ingress.paths | nindent 8 }}
+  tls:
+  - hosts:
+    - {{ include "hocs-app.external.domainName" . }}
+    secretName: hocs-frontend-external-tls-cert
+{{- end }}
