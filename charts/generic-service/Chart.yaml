@@ -1,8 +1,8 @@
 apiVersion: v2
-name: hocs-backend-service
-description: A Helm chart for a generic backend services.
+name: hocs-generic-service
+description: A Helm chart for generic services.
 
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 1.2.1
+version: 1.0.0

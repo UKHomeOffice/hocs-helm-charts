@@ -1,0 +1,147 @@
+---
+isProd: true
+clusterPrefix: cs
+
+autoscale:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 3
+
+service:
+  port: 443
+  portName: 'http'
+  targetPort: 10443
+
+deployment:
+  selectorRole: hocs-backend
+  annotations:
+    downscaler/downtime: 'Mon-Sun 00:00-04:55 Europe/London,Mon-Sun 23:05-24:00 Europe/London'
+  securityContext:
+    runAsNonRoot: true
+    capabilities:
+      drop:
+        - SETUID
+        - SETGID
+  volumes:
+    - name: keystore
+      emptyDir:
+        medium: "Memory"
+    - name: certs
+      emptyDir:
+        medium: 'Memory'
+    - name: secrets
+      emptyDir:
+        medium: "Memory"
+    - name: bundle
+      configMap:
+        name: bundle
+    - name: auth-secrets
+      secret:
+        secretName: ui-casework-creds
+    - name: frontend-keycloak-secret
+      secret:
+        secretName: frontend-keycloak-secret
+
+truststore:
+  enabled: true
+  image:
+    repository: quay.io/ukhomeofficedigital/cfssl-sidekick-jks
+    version: v0.0.9
+  resources:
+    limits:
+      cpu: 300m
+      memory: 96Mi
+    requests:
+      cpu: 100m
+      memory: 96Mi
+  volumeMounts:
+    - name: certs
+      mountPath: /certs
+    - name: keystore
+      mountPath: /etc/keystore
+    - name: bundle
+      mountPath: /etc/ssl/certs
+      readOnly: true
+
+proxy:
+  enabled: true
+  image:
+    repository: quay.io/ukhomeofficedigital/nginx-proxy
+    version: v4.2.0
+  resources:
+    limits:
+      cpu: 300m
+      memory: 96Mi
+    requests:
+      cpu: 100m
+      memory: 96Mi
+  volumeMounts:
+    - name: certs
+      mountPath: /certs
+      readOnly: true
+    - name: secrets
+      mountPath: /etc/nginx/secrets
+      readOnly: true
+    - name: auth-secrets
+      mountPath: /etc/nginx/authsecrets
+      readOnly: true
+
+keycloak:
+  enabled: false
+  image:
+    repository: quay.io/keycloak/keycloak-gatekeeper
+    version: 8.0.2
+  targetPort: '8081'
+  resources:
+    limits:
+      cpu: 300m
+      memory: 96Mi
+    requests:
+      cpu: 100m
+      memory: 96Mi
+  volumeMounts:
+    - mountPath: /etc/secrets
+      name: frontend-keycloak-secret
+      readOnly: true
+
+keycloakApi:
+  enabled: false
+  targetPort: '8082'
+
+app:
+  image: {}
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 768Mi
+    requests:
+      cpu: 200m
+      memory: 768Mi
+  port: 8080
+  volumeMounts:
+    - mountPath: /etc/keystore
+      name: keystore
+      readOnly: true
+    - mountPath: /certs
+      name: certs
+      readOnly: true
+    - mountPath: /etc/ssl/certs
+      name: bundle
+      readOnly: true
+  preStop: '[ "sh", "-c", "sleep 20" ]'
+
+ingress:
+  internal:
+    enabled: false
+  external:
+    enabled: false
+  paths: []
+  annotations:
+    cert-manager.io/enabled: "true"
+    ingress.kubernetes.io/backend-protocol: "HTTPS"
+    ingress.kubernetes.io/secure-backends: "true"
+    ingress.kubernetes.io/proxy-body-size: "52m"
+    ingress.kubernetes.io/proxy-buffer-size: 128k
+    ingress.kubernetes.io/server-snippets: |
+      client_header_buffer_size     8k;
+      large_client_header_buffers   4 128k;
