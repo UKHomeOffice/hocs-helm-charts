@@ -22,7 +22,7 @@ Application port
 {{- end }}
 
 {{/*
-internal domain Name
+Internal domain Name
 */}}
 {{- define "hocs-app.internal.domainName" -}}
 {{ tpl .Values.ingress.internal.host .}}
