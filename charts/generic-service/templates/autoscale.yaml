@@ -1,3 +1,4 @@
+{{- if .Values.autoscale.enabled }}
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
@@ -5,10 +6,11 @@ metadata:
     app: {{ include "hocs-app.name" . }}
   name: {{ include "hocs-app.name" . }}
 spec:
-  maxReplicas: {{ .Values.maxReplicas }}
-  minReplicas: {{ .Values.minReplicas }}
+  maxReplicas: {{ .Values.autoscale.maxReplicas }}
+  minReplicas: {{ .Values.autoscale.minReplicas }}
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
     name: {{ include "hocs-app.name" . }}
   targetCPUUtilizationPercentage: 50
+{{- end }}
