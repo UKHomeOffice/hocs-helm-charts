@@ -29,7 +29,7 @@ internal domain Name
 {{- end }}
 
 {{/*
-external domain Name
+External domain Name
 */}}
 {{- define "hocs-app.external.domainName" -}}
 {{tpl .Values.ingress.external.host . }}
