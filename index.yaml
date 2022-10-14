@@ -1,0 +1,12 @@
+apiVersion: v1
+entries:
+  hocs-generic-service:
+  - apiVersion: v2
+    created: "2022-10-14T16:16:23.767800151Z"
+    description: A Helm chart for generic services.
+    digest: 1a6d38c14ff7d805235e58053709d326de43b356d6c8c8af8095ab82f2250df5
+    name: hocs-generic-service
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-generic-service-1.0.0/hocs-generic-service-1.0.0.tgz
+    version: 1.0.0
+generated: "2022-10-14T16:16:23.767820151Z"
