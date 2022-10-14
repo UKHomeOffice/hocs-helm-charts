@@ -17,5 +17,5 @@ spec:
   tls:
   - hosts:
     - {{ include "hocs-app.internal.domainName" . }}
-    secretName: hocs-frontend-internal-tls-cert
+    secretName: {{ include "hocs-app.name" . }}-internal-tls-cert
 {{- end }}
