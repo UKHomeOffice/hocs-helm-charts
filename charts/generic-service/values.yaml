@@ -8,6 +8,7 @@ autoscale:
   maxReplicas: 3
 
 service:
+  enabled: true
   port: 443
   portName: 'http'
   targetPort: 10443
@@ -49,7 +50,7 @@ truststore:
     version: v0.0.9
   resources:
     limits:
-      cpu: 300m
+      cpu: 100m
       memory: 96Mi
     requests:
       cpu: 100m
