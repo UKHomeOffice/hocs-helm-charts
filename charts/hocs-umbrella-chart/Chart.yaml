@@ -1,0 +1,52 @@
+apiVersion: v2
+name: hocs-umbrella-chart
+description: An umbrella chart for all hocs services
+version: 1.0.0
+
+dependencies:
+  - name: hocs-network-policies
+    version: 1.0.0
+    repository: https://ukhomeoffice.github.io/hocs-network-policies
+  - name: hocs-outbound-proxy
+    version: 1.0.0
+    repository: https://ukhomeoffice.github.io/hocs-outbound-proxy
+  - name: hocs-info-service
+    version: 1.0.0
+    repository: https://ukhomeoffice.github.io/hocs-info-service
+  - name: hocs-case-creator
+    version: 1.0.0
+    repository: https://ukhomeoffice.github.io/hocs-case-creator
+    condition: caseCreator.enabled
+  - name: hocs-queue-tool
+    version: 1.0.0
+    repository: https://ukhomeoffice.github.io/hocs-queue-tool
+  - name: hocs-templates
+    version: 1.0.0
+    repository: https://ukhomeoffice.github.io/hocs-templates
+  - name: hocs-notify
+    version: 1.0.0
+    repository: https://ukhomeoffice.github.io/hocs-notify
+  - name: hocs-search
+    version: 1.0.0
+    repository: https://ukhomeoffice.github.io/hocs-search
+  - name: hocs-audit
+    version: 1.0.0
+    repository: https://ukhomeoffice.github.io/hocs-audit
+  - name: hocs-docs-converter
+    version: 1.0.0
+    repository: https://ukhomeoffice.github.io/hocs-docs-converter
+  - name: hocs-docs
+    version: 1.0.0
+    repository: https://ukhomeoffice.github.io/hocs-docs
+  - name: hocs-casework
+    version: 1.0.0
+    repository: https://ukhomeoffice.github.io/hocs-casework
+  - name: hocs-workflow
+    version: 1.0.0
+    repository: https://ukhomeoffice.github.io/hocs-workflow
+  - name: hocs-frontend
+    version: 1.0.0
+    repository: https://ukhomeoffice.github.io/hocs-frontend
+  - name: hocs-management-ui
+    version: 1.0.0
+    repository: https://ukhomeoffice.github.io/hocs-management-ui
