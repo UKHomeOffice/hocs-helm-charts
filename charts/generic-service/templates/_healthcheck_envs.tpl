@@ -3,6 +3,9 @@ startupProbe:
   httpGet:
     path: /actuator/health/liveness
     port: http
+{{- if not .Values.proxy.enabled }}
+    scheme: HTTPS
+{{- end }}
     httpHeaders:
       - name: X-probe
         value: kubelet
@@ -13,6 +16,9 @@ livenessProbe:
   httpGet:
     path: /actuator/health/liveness
     port: http
+{{- if not .Values.proxy.enabled }}
+    scheme: HTTPS
+{{- end }}
     httpHeaders:
       - name: X-probe
         value: kubelet
@@ -21,6 +27,9 @@ readinessProbe:
   httpGet:
     path: /actuator/health/readiness
     port: http
+{{- if not .Values.proxy.enabled }}
+    scheme: HTTPS
+{{- end }}
     httpHeaders:
       - name: X-probe
         value: kubelet
