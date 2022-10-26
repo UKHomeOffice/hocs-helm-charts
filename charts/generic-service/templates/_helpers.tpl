@@ -22,6 +22,13 @@ Application port
 {{- end }}
 
 {{/*
+Healthcheck scheme
+*/}}
+{{- define "hocs-app.healthcheck.scheme" -}}
+{{- if .Values.proxy.enabled }}HTTP{{- else }}HTTPS{{- end }}
+{{- end }}
+
+{{/*
 Internal domain Name
 */}}
 {{- define "hocs-app.internal.domainName" -}}

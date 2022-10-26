@@ -12,5 +12,5 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: {{ include "hocs-app.name" . }}
-  targetCPUUtilizationPercentage: 50
+  targetCPUUtilizationPercentage: {{ .Values.autoscale.targetCpu }}
 {{- end }}
