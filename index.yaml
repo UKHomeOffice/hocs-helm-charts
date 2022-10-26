@@ -41,4 +41,16 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-generic-service-1.0.0/hocs-generic-service-1.0.0.tgz
     version: 1.0.0
-generated: "2022-10-26T21:57:56.08900475Z"
+  hocs-notify:
+  - apiVersion: v2
+    created: "2022-10-26T22:08:23.675115579Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: 2.0.0
+    digest: 37bb39fba895ea96b392564e53c2d71ce55e7957f2ad298b451b3ea186a0256c
+    name: hocs-notify
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-notify-1.0.0/hocs-notify-1.0.0.tgz
+    version: 1.0.0
+generated: "2022-10-26T22:08:23.675134478Z"
