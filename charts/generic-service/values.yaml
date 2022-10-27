@@ -195,7 +195,7 @@ app:
       memory: 768Mi
   port: 8080
   healthcheck:
-    readliness: /actuator/health/readiness
+    readiness: /actuator/health/readiness
     liveness: /actuator/health/liveness
   volumeMounts:
     - mountPath: /etc/keystore
