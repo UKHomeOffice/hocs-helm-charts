@@ -2,8 +2,9 @@
 hocs-generic-service:
   nameOverride: hocs-audit
 
-  keycloak:
-    enabled: false
+  deployment:
+    annotations:
+      downscaler/downtime: 'Mon-Sun 00:00-04:50 Europe/London,Mon-Sun 23:05-24:00 Europe/London'
 
   app:
     image:
