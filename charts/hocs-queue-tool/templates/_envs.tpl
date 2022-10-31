@@ -1,4 +1,4 @@
-{{- define "deployment.envs" }}
+{{- define "hocs-queue-tool.envs" }}
 - name: JAVA_OPTS
   value: '{{ tpl .Values.app.env.javaOpts . }}'
 {{- if not .Values.proxy.enabled }}
