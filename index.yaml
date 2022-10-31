@@ -107,6 +107,17 @@ entries:
     version: 2.0.0
   hocs-queue-tool:
   - apiVersion: v2
+    created: "2022-10-31T22:13:09.3302674Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: 2.0.1
+    digest: 3dd62342dddd6c3b5c7c1f21dfd11dac7672e8bc5213a77757a3d583a7d3ccb7
+    name: hocs-queue-tool
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-queue-tool-2.0.1/hocs-queue-tool-2.0.1.tgz
+    version: 2.0.1
+  - apiVersion: v2
     created: "2022-10-31T22:00:22.91248586Z"
     dependencies:
     - name: hocs-generic-service
@@ -165,4 +176,4 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-workflow-2.0.0/hocs-workflow-2.0.0.tgz
     version: 2.0.0
-generated: "2022-10-31T22:00:24.166554235Z"
+generated: "2022-10-31T22:13:09.3302773Z"
