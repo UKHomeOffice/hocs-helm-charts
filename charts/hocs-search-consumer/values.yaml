@@ -17,7 +17,7 @@ hocs-generic-service:
   deployment:
     replicas: 1
     annotations:
-      downscaler/downtime: "Mon-Sun 00:00-05:10 Europe/London,Mon-Sun 22:50-24:00 Europe/London"
+      downscaler/downtime: "Mon-Sun 00:00-04:55 Europe/London,Mon-Sun 23:05-24:00 Europe/London"
 
   app:
     image:
