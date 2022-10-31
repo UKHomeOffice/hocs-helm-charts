@@ -19,9 +19,6 @@ hocs-generic-service:
   app:
     image:
       repository: quay.io/ukhomeofficedigital/hocs-case-creator
-    resources:
-      limits:
-        cpu: 200m
     env:
       javaOpts: >-
         -XX:InitialRAMPercentage=50 -XX:MaxRAMPercentage=70
