@@ -10,8 +10,6 @@ hocs-generic-service:
 
   deployment:
     replicas: 1
-    annotations:
-      downscaler/downtime: "Mon-Sun 00:00-04:55 Europe/London,Mon-Sun 23:05-24:00 Europe/London"
 
   truststore:
     enabled: false
