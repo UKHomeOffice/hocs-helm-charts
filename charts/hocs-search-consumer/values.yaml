@@ -8,9 +8,6 @@ hocs-generic-service:
   service:
     enabled: false
 
-  truststore:
-    enabled: false
-
   proxy:
     enabled: false
 
