@@ -83,6 +83,10 @@ hocs-generic-service:
       - --enable-default-deny=true
       - --enable-refresh-tokens=true
       - --encryption-key=$(ENCRYPTION_KEY)
+      - --no-redirects=false
+      - --enable-logout-redirect=true
+      - --listen=127.0.0.1:{{ .Values.keycloak.targetPort }}
+      - --revocation-url={{ .Values.keycloak.realm }}/protocol/openid-connect/logout
     realm: https://sso.digital.homeoffice.gov.uk/auth/realms/hocs-prod
     timeout: 300
     domain: cs.homeoffice.gov.uk
