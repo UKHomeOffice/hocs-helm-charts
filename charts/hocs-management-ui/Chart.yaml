@@ -1,6 +1,6 @@
 apiVersion: v2
-name: hocs-frontend
-version: 3.0.0
+name: hocs-management-ui
+version: 2.0.0
 dependencies:
   - name: hocs-generic-service
     version: 2.0.1
