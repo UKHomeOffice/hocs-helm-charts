@@ -76,6 +76,6 @@ hocs-generic-service:
           servicePort: 443
         path: /
       - backend:
-          serviceName: hocs-audit
+          serviceName: hocs-extracts
           servicePort: 443
         path: /export
