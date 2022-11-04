@@ -1,0 +1,22 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: hocs-proxy-policy
+spec:
+  podSelector:
+    matchLabels:
+      role: hocs-outbound-proxy
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              role: hocs-frontend
+        - podSelector:
+            matchLabels:
+              role: hocs-backend
+  egress:
+    - {}

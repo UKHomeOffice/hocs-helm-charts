@@ -1,0 +1,38 @@
+---
+nameOverride: hocs-outbound-proxy
+
+autoscale:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 3
+  targetCpu: 50
+
+service:
+  enabled: true
+  port: 31290
+  portName: 'http'
+  targetPort: 3129
+
+deployment:
+  selectorRole: hocs-outbound-proxy
+  annotations:
+    downscaler/downtime: "Mon-Sun 00:00-04:50 Europe/London,Mon-Sun 23:10-24:00 Europe/London"
+  volumes:
+    - name: hocs-outbound-proxy-config
+      configMap:
+        name: hocs-outbound-proxy-config
+
+app:
+  image:
+    repository: quay.io/ukhomeofficedigital/hocs-outbound-proxy
+  selectorRole: hocs-outbound-proxy
+  resources:
+    limits:
+      cpu: 100m
+      memory: 96Mi
+    requests:
+      cpu: 100m
+      memory: 96Mi
+  volumeMounts:
+    - name: hocs-outbound-proxy-config
+      mountPath: /etc/squid
