@@ -17,6 +17,12 @@ deployment:
   selectorRole: hocs-outbound-proxy
   annotations:
     downscaler/downtime: "Mon-Sun 00:00-04:50 Europe/London,Mon-Sun 23:10-24:00 Europe/London"
+  securityContext:
+    runAsNonRoot: true
+    capabilities:
+      drop:
+        - SETUID
+        - SETGID
   volumes:
     - name: hocs-outbound-proxy-config
       configMap:
@@ -36,3 +42,4 @@ app:
   volumeMounts:
     - name: hocs-outbound-proxy-config
       mountPath: /etc/squid
+  preStop: '[ "sh", "-c", "sleep 20" ]'
