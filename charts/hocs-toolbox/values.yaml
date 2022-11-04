@@ -1,0 +1,33 @@
+---
+nameOverride: hocs-toolbox
+
+deployment:
+  selectorRole: hocs-backend
+  annotations:
+    downscaler/downtime: 'Mon-Sun 00:00-04:55 Europe/London,Mon-Sun 23:05-24:00 Europe/London'
+  replicas: 1
+  securityContext:
+    runAsNonRoot: true
+    capabilities:
+      drop:
+        - SETUID
+        - SETGID
+
+app:
+  image:
+    repository: quay.io/ukhomeofficedigital/hocs-toolbox
+  env:
+    databases:
+      - 'audit'
+      - 'info'
+      - 'docs'
+      - 'workflow'
+      - 'casework'
+      - 'extracts'
+  resources:
+    limits:
+      cpu: 200m
+      memory: 256Mi
+    requests:
+      cpu: 50m
+      memory: 256Mi
