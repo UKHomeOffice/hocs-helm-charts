@@ -1,0 +1,67 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hocs-outbound-proxy-config
+data:
+  squid.conf: |
+    # Local configuration
+    acl localnet src 10.0.0.0/8
+
+    # ACL ALLOWED PORTS
+    acl Safe_ports port 80                # HTTP
+    acl Safe_ports port 443                # HTTPS
+
+    acl notify dstdomain .notifications.service.gov.uk # GOV.UK Notify Service
+    acl keycloak dstdomain .homeoffice.gov.uk # Home Office
+    acl aws dstdomain .amazonaws.com # aws
+    acl uk_parliament dstdomain .parliament.uk # UK Parliament
+    acl scot_parliament dstdomain .parliament.scot # Scottish Parliament
+    acl ni_parliament dstdomain .niassembly.gov.uk # NI Assembly
+    acl wales_parliament dstdomain .assembly.wales # Welsh Parliament
+
+    acl CONNECT method CONNECT
+    acl hasRequest has request
+
+    # PID file location
+    pid_filename /app/squid.pid
+
+    # Deny requests to all but Safe ports
+    http_access deny !Safe_ports
+
+    # Deny CONNECT to other than secure Safe ports
+    http_access deny CONNECT !Safe_ports
+
+    # Only allow cachemgr access from localhost
+    http_access allow manager localhost
+    http_access deny manager
+
+    http_access deny to_localhost
+
+    http_access allow localnet notify
+    http_access allow localnet keycloak
+    http_access allow localnet aws
+    http_access allow localnet uk_parliament
+    http_access allow localnet scot_parliament
+    http_access allow localnet wales_parliament
+    http_access allow localnet ni_parliament
+
+    # And finally deny all other access to this proxy
+    http_access deny all
+
+    # LISTENING PORT
+    http_port 3129
+
+    # ADDITIONAL TWEAKS
+    cache deny all
+    forwarded_for delete
+    httpd_suppress_version_string on
+    via off
+
+    # LOGGING
+    logfile_rotate 0
+    logformat squid {"logtime":"%tl", response_time":%tr, "src_ip":"%>a", "squid_request_status":"%Ss", "http_status_code":%>Hs, "reply_size_include_header":%<st, "http_method":"%rm", "request_url":"%ru", "request_path":"%rp", "squid":"%Sh", "dst_ip":"%<a", "content_type":"%mt"}
+    cache_log stdio:/dev/stdout
+    access_log stdio:/dev/stdout hasRequest
+    cache_store_log stdio:/dev/stdout
+  mime.conf: |
+    # Empty file
