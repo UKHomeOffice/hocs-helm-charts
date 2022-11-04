@@ -184,6 +184,14 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-notify-2.0.0/hocs-notify-2.0.0.tgz
     version: 2.0.0
+  hocs-outbound-proxy:
+  - apiVersion: v2
+    created: "2022-11-04T00:54:56.053923238Z"
+    digest: 69b35bb3e2a9857ccbc12c9ae4bd3ff46264cd6f9a631ac590650cb3c6f0ee34
+    name: hocs-outbound-proxy
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-outbound-proxy-2.0.0/hocs-outbound-proxy-2.0.0.tgz
+    version: 2.0.0
   hocs-queue-tool:
   - apiVersion: v2
     created: "2022-11-02T13:51:39.176730745Z"
@@ -277,4 +285,4 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-workflow-2.0.0/hocs-workflow-2.0.0.tgz
     version: 2.0.0
-generated: "2022-11-03T14:45:44.094384307Z"
+generated: "2022-11-04T00:54:56.053944738Z"
