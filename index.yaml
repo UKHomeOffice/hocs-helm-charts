@@ -37,6 +37,17 @@ entries:
     version: 2.0.0
   hocs-case-migrator:
   - apiVersion: v2
+    created: "2022-11-09T11:16:29.537641213Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: 2.0.1
+    digest: 5c7dc3730bdcaa42a4902c6ef6167296945d7e68e7311afddc13ff255de5d0c6
+    name: hocs-case-migrator
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-case-migrator-2.0.3/hocs-case-migrator-2.0.3.tgz
+    version: 2.0.3
+  - apiVersion: v2
     created: "2022-11-02T23:17:29.367332984Z"
     dependencies:
     - name: hocs-generic-service
@@ -300,4 +311,4 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-workflow-2.0.0/hocs-workflow-2.0.0.tgz
     version: 2.0.0
-generated: "2022-11-04T23:06:04.911635834Z"
+generated: "2022-11-09T11:16:29.537762719Z"
