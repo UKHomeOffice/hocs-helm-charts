@@ -23,6 +23,8 @@
   value: '{{ tpl .Values.app.env.workflowService . }}'
 - name: MESSAGE_IGNORED_TYPES
   value: '{{ tpl .Values.app.env.ignoredTypes . }}'
+- name: CASE_CREATOR_MODE
+  value: 'migration'
 - name: CASE_CREATOR_BASICAUTH
   valueFrom:
     secretKeyRef:
@@ -38,7 +40,7 @@
     secretKeyRef:
       name: {{ .Release.Namespace }}-case-migrator-sqs
       key: secret_access_key
-- name: AWS_SQS_CASE_CREATOR_URL
+- name: AWS_SQS_CASE_MIGRATOR_URL
   valueFrom:
     secretKeyRef:
       name: {{ .Release.Namespace }}-case-migrator-sqs
