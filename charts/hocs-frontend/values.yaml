@@ -25,6 +25,7 @@ hocs-generic-service:
       liveness: /health
 
   proxy:
+    enabled: true
     env:
       - name: HTTP2
         value: 'TRUE'
