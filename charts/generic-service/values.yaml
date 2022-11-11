@@ -98,9 +98,9 @@ keycloak:
   image:
     repository: quay.io/keycloak/keycloak-gatekeeper
     version: 8.0.2
-  args:
-    realm: ''
-    domain: ''
+  args: []
+  realm: ''
+  domain: ''
   env:
     - name: ENCRYPTION_KEY
       valueFrom:
@@ -123,7 +123,7 @@ keycloak:
 keycloakApi:
   enabled: false
   targetPort: '8082'
-  args: {}
+  args: []
 
 app:
   image: ''
