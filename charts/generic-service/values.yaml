@@ -98,7 +98,7 @@ keycloak:
   image:
     repository: quay.io/keycloak/keycloak-gatekeeper
     version: 8.0.2
-  args: []
+  args:
     realm: ''
     domain: ''
   env:
