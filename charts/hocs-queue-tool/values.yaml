@@ -2,16 +2,7 @@
 hocs-generic-service:
   nameOverride: hocs-queue-tool
 
-  autoscale:
-    enabled: false
-
   service:
-    enabled: false
-
-  deployment:
-    replicas: 1
-
-  proxy:
     enabled: false
 
   app:
@@ -31,10 +22,4 @@ hocs-generic-service:
         -Dhttps.proxyPort=31290
         -Dhttp.nonProxyHosts=*.{{ .Release.Namespace }}.svc.cluster.local
       springProfiles: 'aws'
-      queues:
-        - 'audit'
-        - 'case-creator'
-        - 'document'
-        - 'notify'
-        - 'search'
-        - 'case-migrator'
+      queues: []

@@ -15,8 +15,6 @@ service:
 
 deployment:
   selectorRole: hocs-outbound-proxy
-  annotations:
-    downscaler/downtime: "Mon-Sun 00:00-04:50 Europe/London,Mon-Sun 23:10-24:00 Europe/London"
   securityContext:
     runAsNonRoot: true
     capabilities:

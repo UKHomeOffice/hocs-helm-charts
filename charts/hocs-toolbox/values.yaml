@@ -3,8 +3,6 @@ nameOverride: hocs-toolbox
 
 deployment:
   selectorRole: hocs-backend
-  annotations:
-    downscaler/downtime: 'Mon-Sun 00:00-04:55 Europe/London,Mon-Sun 23:05-24:00 Europe/London'
   replicas: 1
   securityContext:
     runAsNonRoot: true
@@ -23,7 +21,6 @@ app:
       - 'docs'
       - 'workflow'
       - 'casework'
-      - 'extracts'
   resources:
     limits:
       cpu: 200m

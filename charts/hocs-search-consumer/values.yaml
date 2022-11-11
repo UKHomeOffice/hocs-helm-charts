@@ -2,19 +2,8 @@
 hocs-generic-service:
   nameOverride: hocs-search-consumer
 
-  autoscale:
-    enabled: false
-
   service:
     enabled: false
-
-  proxy:
-    enabled: false
-
-  deployment:
-    replicas: 1
-    annotations:
-      downscaler/downtime: "Mon-Sun 00:00-04:55 Europe/London,Mon-Sun 23:05-24:00 Europe/London"
 
   app:
     image:
@@ -29,5 +18,5 @@ hocs-generic-service:
         -Dhttp.nonProxyHosts=*.{{ .Release.Namespace }}.svc.cluster.local
       springProfiles: 'aws'
       elasticPrefix: '{{ .Release.Namespace }}-latest'
-      elasticMode: 'SINGULAR'
+      elasticMode: ''
       searchQueueName: '{{ .Release.Namespace }}-search-sqs'

@@ -5,11 +5,6 @@ hocs-generic-service:
   app:
     image:
       repository: quay.io/ukhomeofficedigital/hocs-docs
-    resources:
-      limits:
-        memory: 1280Mi
-      requests:
-        memory: 1280Mi
     env:
       javaOpts: >-
         -XX:InitialRAMPercentage=30 -XX:MaxRAMPercentage=50

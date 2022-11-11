@@ -5,11 +5,6 @@ hocs-generic-service:
   app:
     image:
       repository: quay.io/ukhomeofficedigital/hocs-workflow
-    resources:
-      limits:
-        memory: 1536Mi
-      requests:
-        memory: 1536Mi
     env:
       javaOpts: >-
         -XX:InitialRAMPercentage=50 -XX:MaxRAMPercentage=70
