@@ -1,9 +1,8 @@
 ---
-isProd: true
-clusterPrefix: cs
+clusterPrefix: ''
 
 autoscale:
-  enabled: true
+  enabled: false
   minReplicas: 2
   maxReplicas: 3
   targetCpu: 50
@@ -16,8 +15,8 @@ service:
 
 deployment:
   selectorRole: hocs-backend
-  annotations:
-    downscaler/downtime: 'Mon-Sun 00:00-04:55 Europe/London,Mon-Sun 23:05-24:00 Europe/London'
+  replicas: 1
+  annotations: {}
   securityContext:
     runAsNonRoot: true
     capabilities:
@@ -71,29 +70,11 @@ truststore:
       readOnly: true
 
 proxy:
-  enabled: true
+  enabled: false
   image:
     repository: quay.io/ukhomeofficedigital/nginx-proxy
     version: v4.2.0
-  env:
-    - name: HTTP2
-      value: 'TRUE'
-    - name: PROXY_SERVICE_HOST
-      value: '127.0.0.1'
-    - name: PROXY_SERVICE_PORT
-      value: '{{ .Values.app.port }}'
-    - name: NAXSI_USE_DEFAULT_RULES
-      value: 'FALSE'
-    - name: ENABLE_UUID_PARAM
-      value: 'FALSE'
-    - name: HTTPS_REDIRECT
-      value: 'FALSE'
-    - name: BASIC_AUTH
-      value: '/etc/nginx/authsecrets/htpasswd'
-    - name: SERVER_CERT
-      value: '/certs/tls.pem'
-    - name: SERVER_KEY
-      value: '/certs/tls-key.pem'
+  env: {}
   resources:
     limits:
       cpu: 300m
@@ -117,29 +98,9 @@ keycloak:
   image:
     repository: quay.io/keycloak/keycloak-gatekeeper
     version: 8.0.2
-  args:
-    - --config=/etc/secrets/data.yml
-    - --discovery-url={{ .Values.keycloak.realm }}
-    - --openid-provider-proxy=http://hocs-outbound-proxy.{{ .Release.Namespace }}.svc.cluster.local:31290
-    - --enable-logging=true
-    - --enable-json-logging=true
-    - --upstream-url=http://127.0.0.1:{{ include "hocs-app.port" . }}
-    - --upstream-response-header-timeout={{ .Values.keycloak.timeout }}s
-    - --upstream-expect-continue-timeout={{ .Values.keycloak.timeout }}s
-    - --upstream-keepalive-timeout={{ .Values.keycloak.timeout }}s
-    - --server-read-timeout={{ .Values.keycloak.timeout }}s
-    - --server-write-timeout={{ .Values.keycloak.timeout }}s
-    - --resources=uri=/health|white-listed=true
-    - --resources=uri=/public/*|white-listed=true
-    - --resources=uri=/*
-    - --secure-cookie=true
-    - --http-only-cookie=true
-    - --enable-refresh-tokens=true
-    - --encryption-key=$(ENCRYPTION_KEY)
-    - --no-redirects=false
-    - --enable-logout-redirect=true
-    - --listen=127.0.0.1:{{ .Values.keycloak.targetPort }}
-    - --revocation-url={{ .Values.keycloak.realm }}/protocol/openid-connect/logout
+  args: {}
+    realm: ''
+    domain: ''
   env:
     - name: ENCRYPTION_KEY
       valueFrom:
@@ -162,36 +123,16 @@ keycloak:
 keycloakApi:
   enabled: false
   targetPort: '8082'
-  args:
-    - --config=/etc/secrets/data.yml
-    - --discovery-url={{ .Values.keycloak.realm }}
-    - --openid-provider-proxy=http://hocs-outbound-proxy.{{ .Release.Namespace }}.svc.cluster.local:31290
-    - --enable-logging=true
-    - --enable-json-logging=true
-    - --upstream-url=http://127.0.0.1:{{ include "hocs-app.port" . }}
-    - --upstream-response-header-timeout={{ .Values.keycloak.timeout }}s
-    - --upstream-expect-continue-timeout={{ .Values.keycloak.timeout }}s
-    - --upstream-keepalive-timeout={{ .Values.keycloak.timeout }}s
-    - --server-read-timeout={{ .Values.keycloak.timeout }}s
-    - --server-write-timeout={{ .Values.keycloak.timeout }}s
-    - --resources=uri=/health|white-listed=true
-    - --resources=uri=/public/*|white-listed=true
-    - --resources=uri=/*
-    - --secure-cookie=true
-    - --http-only-cookie=true
-    - --enable-refresh-tokens=true
-    - --encryption-key=$(ENCRYPTION_KEY)
-    - --no-redirects=true
-    - --listen=127.0.0.1:{{ .Values.keycloakApi.targetPort }}
+  args: {}
 
 app:
-  image: {}
+  image: ''
   resources:
     limits:
       cpu: 1000m
       memory: 768Mi
     requests:
-      cpu: 200m
+      cpu: 100m
       memory: 768Mi
   port: 8080
   healthcheck:
