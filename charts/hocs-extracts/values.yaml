@@ -3,6 +3,7 @@ hocs-generic-service:
   nameOverride: hocs-extracts
 
   proxy:
+    enabled: true
     env:
       - name: HTTP2
         value: 'TRUE'
