@@ -78,9 +78,4 @@
     secretKeyRef:
       name: hocs-case-creator-identities
       key: complaint_ukvi_team
-- name: CASE_CREATOR_IDENTITIES_MIGRATION_USER
-  valueFrom:
-    secretKeyRef:
-      name: hocs-case-migrator-identities
-      key: migration_user
 {{- end -}}
