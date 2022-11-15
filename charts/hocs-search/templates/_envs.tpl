@@ -17,8 +17,6 @@
   value: '{{ include "hocs-app.port" . }}'
 - name: SPRING_PROFILES_ACTIVE
   value: '{{ tpl .Values.app.env.springProfiles . }}'
-- name: AWS_SQS_ENABLED
-  value: 'false'
 - name: ELASTICSEARCH_INDEX_PREFIX
   value: '{{ tpl .Values.app.env.elasticPrefix . }}'
 - name: ELASTICSEARCH_MODE
