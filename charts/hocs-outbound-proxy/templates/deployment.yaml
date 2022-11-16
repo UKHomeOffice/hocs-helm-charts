@@ -31,7 +31,7 @@ spec:
                     - key: name
                       operator: In
                       values:
-                        - { { include "hocs-app.name" . } }
+                        - {{ include "hocs-app.name" . }}
                 topologyKey: kubernetes.io/hostname
       containers:
         - name: {{ include "hocs-app.name" . }}
