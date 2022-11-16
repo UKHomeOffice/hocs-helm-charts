@@ -560,6 +560,14 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-management-ui-2.0.0/hocs-management-ui-2.0.0.tgz
     version: 2.0.0
+  hocs-network-policies:
+  - apiVersion: v2
+    created: "2022-11-16T22:47:29.022261801Z"
+    digest: 0699657024d6d0eaa0585a2ba10e45a93b48a1cc7ff70c78b3f623ef0edb683d
+    name: hocs-network-policies
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-network-policies-1.0.0/hocs-network-policies-1.0.0.tgz
+    version: 1.0.0
   hocs-notify:
   - apiVersion: v2
     created: "2022-11-12T23:07:06.688954545Z"
@@ -914,4 +922,4 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-workflow-2.0.0/hocs-workflow-2.0.0.tgz
     version: 2.0.0
-generated: "2022-11-16T15:51:28.533365889Z"
+generated: "2022-11-16T22:47:29.022415503Z"
