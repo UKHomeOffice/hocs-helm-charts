@@ -1,0 +1,30 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: hocs-backend-policy
+spec:
+  podSelector:
+    matchLabels:
+      role: hocs-backend
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          role: hocs-frontend
+    - podSelector:
+        matchLabels:
+          role: hocs-backend
+    ports:
+    - port: 10443
+      protocol: TCP
+  egress:
+  - to:
+    - ipBlock:
+        cidr: {{ .Values.rdsCIDR | quote }}
+    ports:
+    - port: 5432
+      protocol: TCP

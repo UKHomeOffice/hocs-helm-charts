@@ -1,0 +1,37 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  - Egress
+  egress:
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          name: kube-tls
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          name: kube-certificates
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          name: kube-system
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          name: virus-scan
+  - to:
+    - podSelector:
+        matchLabels:
+          role: hocs-backend
+    ports:
+    - port: 10443
+      protocol: TCP
+  - to:
+    - podSelector:
+        matchLabels:
+          role: hocs-outbound-proxy
