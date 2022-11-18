@@ -1,6 +1,6 @@
 apiVersion: v2
 name: hocs-templates
-version: 3.0.2
+version: 3.0.3
 dependencies:
   - name: hocs-generic-service
     version: ^3.0.0
