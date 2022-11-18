@@ -93,7 +93,7 @@ spec:
             - configMapRef:
                 name: hocs-queue-config
           env:
-            {{- include (printf "%s.%s" .Values.nameOverride "envs") . | nindent 12 }}
+            {{- include (printf "%s.%s" (include "hocs-deploymentEnvs.name" .) "envs") . | nindent 12 }}
           resources: {{- toYaml .Values.app.resources | nindent 12 }}
           ports:
             - name: {{ .Values.service.portName }}
