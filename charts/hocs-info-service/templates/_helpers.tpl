@@ -6,6 +6,13 @@ Expand the name of the chart.
 {{- end }}
 
 {{/*
+Expand the name of the chart.
+*/}}
+{{- define "hocs-deploymentEnvs.name" -}}
+{{- default .Values.nameOverride .Values.deploymentEnvs | trunc 63 | trimSuffix "-" }}
+{{- end }}
+
+{{/*
 Selector labels
 */}}
 {{- define "hocs-app.selectorLabels" -}}
