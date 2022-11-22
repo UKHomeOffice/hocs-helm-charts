@@ -2,6 +2,9 @@
 hocs-generic-service:
   nameOverride: hocs-notify
 
+  service:
+    enabled: false
+
   app:
     image:
       repository: quay.io/ukhomeofficedigital/hocs-notify
