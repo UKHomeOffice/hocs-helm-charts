@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hocs-queue-config
+data:
+  AWS_ACCOUNT_ID: {{ .Values.awsAccount | quote }}
+  AWS_SQS_REGION: "eu-west-2"
