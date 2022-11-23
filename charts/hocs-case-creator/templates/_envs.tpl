@@ -23,11 +23,6 @@
   value: '{{ tpl .Values.app.env.workflowService . }}'
 - name: MESSAGE_IGNORED_TYPES
   value: '{{ tpl .Values.app.env.ignoredTypes . }}'
-- name: CASE_CREATOR_BASICAUTH
-  valueFrom:
-    secretKeyRef:
-      name: ui-casework-creds
-      key: plaintext
 - name: AWS_SQS_CASE_CREATOR_ACCOUNT_ACCESS_KEY
   valueFrom:
     secretKeyRef:

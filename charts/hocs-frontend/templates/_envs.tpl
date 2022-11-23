@@ -50,11 +50,6 @@
     secretKeyRef:
       name: {{ .Release.Namespace }}-trusted-s3
       key: bucket_name
-- name: WORKFLOW_BASIC_AUTH
-  valueFrom:
-    secretKeyRef:
-      name: ui-casework-creds
-      key: plaintext
 - name: WORKFLOW_SERVICE
   value: '{{ tpl .Values.app.env.workflowService . }}'
 - name: CASEWORK_SERVICE

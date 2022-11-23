@@ -34,11 +34,6 @@
       key: secret_access_key
 - name: HOCS_INFO_SERVICE
   value: '{{ tpl .Values.app.env.infoService . }}'
-- name: HOCS_BASICAUTH
-  valueFrom:
-    secretKeyRef:
-      name: ui-casework-creds
-      key: plaintext
 - name: NOTIFY_APIKEY
   valueFrom:
     secretKeyRef:

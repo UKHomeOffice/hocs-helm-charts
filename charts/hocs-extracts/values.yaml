@@ -23,8 +23,6 @@ hocs-generic-service:
         value: 'FALSE'
       - name: HTTPS_REDIRECT
         value: 'FALSE'
-      - name: BASIC_AUTH_1
-        value: /etc/nginx/authsecrets/htpasswd
       - name: SERVER_CERT
         value: /certs/tls.pem
       - name: SERVER_KEY
