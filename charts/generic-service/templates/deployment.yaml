@@ -133,3 +133,8 @@ spec:
               exec:
                 command: {{ .Values.app.preStop }}
       volumes: {{- toYaml .Values.deployment.volumes | nindent 8 }}
+        {{- if .Values.keycloak.enabled }}
+        - name: frontend-keycloak-secret
+          secret:
+            secretName: frontend-keycloak-secret
+        {{- end }}

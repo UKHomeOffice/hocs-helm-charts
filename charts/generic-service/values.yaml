@@ -36,9 +36,6 @@ deployment:
     - name: bundle
       configMap:
         name: bundle
-    - name: frontend-keycloak-secret
-      secret:
-        secretName: frontend-keycloak-secret
 
 truststore:
   enabled: true
