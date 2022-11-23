@@ -36,9 +36,6 @@ deployment:
     - name: bundle
       configMap:
         name: bundle
-    - name: auth-secrets
-      secret:
-        secretName: ui-casework-creds
     - name: frontend-keycloak-secret
       secret:
         secretName: frontend-keycloak-secret
@@ -88,9 +85,6 @@ proxy:
       readOnly: true
     - name: secrets
       mountPath: /etc/nginx/secrets
-      readOnly: true
-    - name: auth-secrets
-      mountPath: /etc/nginx/authsecrets
       readOnly: true
 
 keycloak:
