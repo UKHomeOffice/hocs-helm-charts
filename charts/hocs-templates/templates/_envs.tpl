@@ -21,9 +21,4 @@
   value: '{{ tpl .Values.app.env.infoService . }}'
 - name: HOCS_DOCUMENT_SERVICE
   value: '{{ tpl .Values.app.env.docsService . }}'
-- name: HOCS_BASICAUTH
-  valueFrom:
-    secretKeyRef:
-      name: ui-casework-creds
-      key: plaintext
 {{- end -}}

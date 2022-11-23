@@ -31,11 +31,6 @@
   value: '{{ tpl .Values.app.env.migrationUserName . }}'
 - name: MIGRATION_GROUP
   value: '{{ tpl .Values.app.env.migrationGroup . }}'
-- name: HOCS_BASICAUTH
-  valueFrom:
-    secretKeyRef:
-      name: ui-casework-creds
-      key: plaintext
 - name: DB_HOST
   valueFrom:
     secretKeyRef:
