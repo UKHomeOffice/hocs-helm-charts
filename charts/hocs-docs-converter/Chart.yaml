@@ -1,6 +1,6 @@
 apiVersion: v2
 name: hocs-docs-converter
-version: 3.0.5
+version: 3.0.6
 dependencies:
   - name: hocs-generic-service
     version: ^3.0.0
