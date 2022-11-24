@@ -2,6 +2,17 @@ apiVersion: v1
 entries:
   hocs-audit:
   - apiVersion: v2
+    created: "2022-11-24T23:12:43.51858364Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^3.0.0
+    digest: 7e82542300e5eb5525dc87b4a90428a2b6a00bf3fcfdd34632d01f99f5696689
+    name: hocs-audit
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-audit-3.0.5/hocs-audit-3.0.5.tgz
+    version: 3.0.5
+  - apiVersion: v2
     created: "2022-11-15T10:42:59.650629843Z"
     dependencies:
     - name: hocs-generic-service
@@ -58,6 +69,17 @@ entries:
     version: 2.0.0
   hocs-case-creator:
   - apiVersion: v2
+    created: "2022-11-24T23:12:43.647956316Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^3.0.0
+    digest: 80f4d6844ced3ef435ce05c73bd7f67a755f5a50607daefd334b6e19fd2f3be7
+    name: hocs-case-creator
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-case-creator-3.0.4/hocs-case-creator-3.0.4.tgz
+    version: 3.0.4
+  - apiVersion: v2
     created: "2022-11-12T23:07:05.337834762Z"
     dependencies:
     - name: hocs-generic-service
@@ -113,6 +135,17 @@ entries:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-case-creator-2.0.0/hocs-case-creator-2.0.0.tgz
     version: 2.0.0
   hocs-case-migrator:
+  - apiVersion: v2
+    created: "2022-11-24T23:12:43.798134795Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^3.0.0
+    digest: 82ae3510d8c3b786a21192df474f3a1705a6ca7bb0d32e993cbabff64ecae818
+    name: hocs-case-migrator
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-case-migrator-3.0.4/hocs-case-migrator-3.0.4.tgz
+    version: 3.0.4
   - apiVersion: v2
     created: "2022-11-12T23:07:05.50909495Z"
     dependencies:
@@ -192,6 +225,17 @@ entries:
     version: 2.0.0
   hocs-casework:
   - apiVersion: v2
+    created: "2022-11-24T23:12:43.934767791Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^3.0.0
+    digest: 5325d0745399b4e5702dc09b3e9f0b525ad92c80a7824b7fc71aef2a0eac7055
+    name: hocs-casework
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-casework-3.0.6/hocs-casework-3.0.6.tgz
+    version: 3.0.6
+  - apiVersion: v2
     created: "2022-11-19T23:31:59.30631913Z"
     dependencies:
     - name: hocs-generic-service
@@ -259,6 +303,17 @@ entries:
     version: 2.0.0
   hocs-docs:
   - apiVersion: v2
+    created: "2022-11-24T23:12:44.068648028Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^3.0.0
+    digest: 9df5ca34a47b5da2e205039b932040b6aa23b36cf9b177c4c0b721ceee1b263d
+    name: hocs-docs
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-docs-3.0.5/hocs-docs-3.0.5.tgz
+    version: 3.0.5
+  - apiVersion: v2
     created: "2022-11-19T23:31:59.430756149Z"
     dependencies:
     - name: hocs-generic-service
@@ -325,6 +380,17 @@ entries:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-docs-2.0.0/hocs-docs-2.0.0.tgz
     version: 2.0.0
   hocs-docs-converter:
+  - apiVersion: v2
+    created: "2022-11-24T23:12:44.199347081Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^3.0.0
+    digest: 9a00bc248a766742e2c25ea95a13bf709ec9475261d19d61bd354da757b54267
+    name: hocs-docs-converter
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-docs-converter-3.0.6/hocs-docs-converter-3.0.6.tgz
+    version: 3.0.6
   - apiVersion: v2
     created: "2022-11-23T23:29:21.347640033Z"
     dependencies:
@@ -404,6 +470,17 @@ entries:
     version: 2.0.0
   hocs-extracts:
   - apiVersion: v2
+    created: "2022-11-24T23:12:44.329263889Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^3.0.0
+    digest: 70cbbe48f88042fcb4795a619dfb3b22f1c04e55552237738080cee3c80a4f51
+    name: hocs-extracts
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-extracts-3.0.4/hocs-extracts-3.0.4.tgz
+    version: 3.0.4
+  - apiVersion: v2
     created: "2022-11-12T23:07:06.211876142Z"
     dependencies:
     - name: hocs-generic-service
@@ -459,6 +536,17 @@ entries:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-extracts-2.0.0/hocs-extracts-2.0.0.tgz
     version: 2.0.0
   hocs-frontend:
+  - apiVersion: v2
+    created: "2022-11-24T23:12:44.448240065Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^3.0.0
+    digest: f62cb4858821ecfa6e33d2fc8c05b57bbaf342b79e9427804f037ddfddec056a
+    name: hocs-frontend
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-frontend-4.0.5/hocs-frontend-4.0.5.tgz
+    version: 4.0.5
   - apiVersion: v2
     created: "2022-11-12T23:07:06.363715015Z"
     dependencies:
@@ -592,6 +680,13 @@ entries:
     version: 2.0.1
   hocs-info-service:
   - apiVersion: v2
+    created: "2022-11-24T23:12:44.563265712Z"
+    digest: 5cd67eaa43bc7b7f02efdd04904b3340b30470edfcc8a8e6146d3489eadb8978
+    name: hocs-info-service
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-info-service-1.4.3/hocs-info-service-1.4.3.tgz
+    version: 1.4.3
+  - apiVersion: v2
     created: "2022-11-24T15:18:49.022346925Z"
     digest: e70355af0ef45d6e248ecdb7c7241f1075d87daa51e6e990a4812788546864c4
     name: hocs-info-service
@@ -649,6 +744,17 @@ entries:
     version: 1.0.0
   hocs-management-ui:
   - apiVersion: v2
+    created: "2022-11-24T23:12:44.679065404Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^3.0.0
+    digest: 9d4bbc72bd65069992fce0a6116cacfa6fc27994e8130afb7c2c336670558ab8
+    name: hocs-management-ui
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-management-ui-3.0.5/hocs-management-ui-3.0.5.tgz
+    version: 3.0.5
+  - apiVersion: v2
     created: "2022-11-12T23:07:06.522568185Z"
     dependencies:
     - name: hocs-generic-service
@@ -705,6 +811,13 @@ entries:
     version: 2.0.0
   hocs-network-policies:
   - apiVersion: v2
+    created: "2022-11-24T23:12:44.847079813Z"
+    digest: 39ae771bcd7a06b39468c585f55afe26b3c8e2ce1c55950ef1a256bc9ce96caa
+    name: hocs-network-policies
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-network-policies-1.1.1/hocs-network-policies-1.1.1.tgz
+    version: 1.1.1
+  - apiVersion: v2
     created: "2022-11-23T22:29:16.643239193Z"
     digest: 41299ce6db2eed78edd170b7f05d9537d86ec8ee280b43088ed27192f2470b71
     name: hocs-network-policies
@@ -719,6 +832,17 @@ entries:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-network-policies-1.0.0/hocs-network-policies-1.0.0.tgz
     version: 1.0.0
   hocs-notify:
+  - apiVersion: v2
+    created: "2022-11-24T23:12:44.989073819Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^3.0.0
+    digest: e930b21dbe50ebdf3ffa385fa832b989d9438ed7df13d3f5de7a8b88ea896619
+    name: hocs-notify
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-notify-3.0.7/hocs-notify-3.0.7.tgz
+    version: 3.0.7
   - apiVersion: v2
     created: "2022-11-22T10:36:30.613882892Z"
     dependencies:
@@ -798,6 +922,13 @@ entries:
     version: 2.0.0
   hocs-outbound-proxy:
   - apiVersion: v2
+    created: "2022-11-24T23:12:45.099072776Z"
+    digest: 967b110a8a78e0bf3141f54a39205d56a96e8b05be30cd6026f70768ca2b157b
+    name: hocs-outbound-proxy
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-outbound-proxy-3.1.1/hocs-outbound-proxy-3.1.1.tgz
+    version: 3.1.1
+  - apiVersion: v2
     created: "2022-11-16T15:51:28.533228089Z"
     digest: a22004a0e51c0ce0d5f0f2b028d8f37d0976053950f9492aea316584cd75aef3
     name: hocs-outbound-proxy
@@ -833,6 +964,17 @@ entries:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-outbound-proxy-2.0.0/hocs-outbound-proxy-2.0.0.tgz
     version: 2.0.0
   hocs-queue-tool:
+  - apiVersion: v2
+    created: "2022-11-24T23:12:45.215539107Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^3.0.0
+    digest: 63ef6c41bb738d36fd1fba0dafb9a79f41681d1db593f3f30d59f94d4cfc29d2
+    name: hocs-queue-tool
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-queue-tool-3.0.3/hocs-queue-tool-3.0.3.tgz
+    version: 3.0.3
   - apiVersion: v2
     created: "2022-11-12T23:07:06.863982177Z"
     dependencies:
@@ -901,6 +1043,17 @@ entries:
     version: 2.0.0
   hocs-search:
   - apiVersion: v2
+    created: "2022-11-24T23:12:45.331989336Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^3.0.0
+    digest: fb1d9363935e8556c4a577c9d9276de6442076bd87a0317dfa4c2e84d0d59598
+    name: hocs-search
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-search-4.0.1/hocs-search-4.0.1.tgz
+    version: 4.0.1
+  - apiVersion: v2
     created: "2022-11-23T16:24:24.744712399Z"
     dependencies:
     - name: hocs-generic-service
@@ -967,6 +1120,17 @@ entries:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-search-2.0.0/hocs-search-2.0.0.tgz
     version: 2.0.0
   hocs-search-consumer:
+  - apiVersion: v2
+    created: "2022-11-24T23:12:45.478256689Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^3.0.0
+    digest: 4414954898302ca18f0b0daeaf9377fb365cc85229952f613a8f0f76cbdfb163
+    name: hocs-search-consumer
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-search-consumer-3.1.1/hocs-search-consumer-3.1.1.tgz
+    version: 3.1.1
   - apiVersion: v2
     created: "2022-11-23T16:24:24.927351965Z"
     dependencies:
@@ -1045,6 +1209,17 @@ entries:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-search-consumer-2.0.0/hocs-search-consumer-2.0.0.tgz
     version: 2.0.0
   hocs-templates:
+  - apiVersion: v2
+    created: "2022-11-24T23:12:45.634126797Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^3.0.0
+    digest: 8a7b592ae800c0676f152ea4231c40c4988dcc919ef2a8650ba555b53d15550e
+    name: hocs-templates
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-templates-3.0.7/hocs-templates-3.0.7.tgz
+    version: 3.0.7
   - apiVersion: v2
     created: "2022-11-24T00:02:01.740376216Z"
     dependencies:
@@ -1135,6 +1310,13 @@ entries:
     version: 2.0.0
   hocs-toolbox:
   - apiVersion: v2
+    created: "2022-11-24T23:12:45.806497158Z"
+    digest: 7e3cebfbff64b0379a302aeb5a418cff382a846eac9bd17959b961037e859d43
+    name: hocs-toolbox
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-toolbox-2.0.1/hocs-toolbox-2.0.1.tgz
+    version: 2.0.1
+  - apiVersion: v2
     created: "2022-11-11T22:40:51.191805013Z"
     digest: 0cd2ed9b8c423d7a0278c2cd16520417b2e1ae159954cf01ae24ada03034e846
     name: hocs-toolbox
@@ -1149,6 +1331,17 @@ entries:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-toolbox-1.0.0/hocs-toolbox-1.0.0.tgz
     version: 1.0.0
   hocs-workflow:
+  - apiVersion: v2
+    created: "2022-11-24T23:12:45.948545667Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^3.0.0
+    digest: ebbb1e72e7d35339493e3b72d2f4c97e009c85aca72928b016d78b0978bba4b0
+    name: hocs-workflow
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-workflow-3.0.6/hocs-workflow-3.0.6.tgz
+    version: 3.0.6
   - apiVersion: v2
     created: "2022-11-19T23:32:00.082048297Z"
     dependencies:
@@ -1215,4 +1408,4 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-workflow-2.0.0/hocs-workflow-2.0.0.tgz
     version: 2.0.0
-generated: "2022-11-24T15:18:49.022495123Z"
+generated: "2022-11-24T23:12:45.949033695Z"
