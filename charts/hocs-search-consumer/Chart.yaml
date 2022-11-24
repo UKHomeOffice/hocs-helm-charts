@@ -1,6 +1,6 @@
 apiVersion: v2
 name: hocs-search-consumer
-version: 3.1.0
+version: 3.1.1
 dependencies:
   - name: hocs-generic-service
     version: ^3.0.0
