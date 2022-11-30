@@ -22,10 +22,6 @@ spec:
         matchLabels:
           name: kube-system
   - to:
-    - namespaceSelector:
-        matchLabels:
-          name: virus-scan
-  - to:
     - podSelector:
         matchLabels:
           role: hocs-outbound-proxy
