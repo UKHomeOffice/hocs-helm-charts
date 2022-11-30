@@ -18,3 +18,11 @@ spec:
     - namespaceSelector:
         matchLabels:
           name: ingress-internal
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          role: hocs-backend
+    ports:
+      - port: 10443
+        protocol: TCP

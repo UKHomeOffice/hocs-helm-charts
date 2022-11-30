@@ -23,6 +23,13 @@ spec:
       protocol: TCP
   egress:
   - to:
+    - podSelector:
+        matchLabels:
+          role: hocs-backend
+    ports:
+      - port: 10443
+        protocol: TCP
+  - to:
     - ipBlock:
         cidr: {{ .Values.rdsCIDR | quote }}
     ports:

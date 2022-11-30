@@ -7,6 +7,7 @@ spec:
   policyTypes:
   - Ingress
   - Egress
+  ingress: []
   egress:
   - to:
     - namespaceSelector:
@@ -24,13 +25,6 @@ spec:
     - namespaceSelector:
         matchLabels:
           name: virus-scan
-  - to:
-    - podSelector:
-        matchLabels:
-          role: hocs-backend
-    ports:
-    - port: 10443
-      protocol: TCP
   - to:
     - podSelector:
         matchLabels:
