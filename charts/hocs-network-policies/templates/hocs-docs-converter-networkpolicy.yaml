@@ -1,0 +1,18 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: hocs-docs-policy
+spec:
+  podSelector:
+    matchLabels:
+      role: hocs-docs-converter
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              role: hocs-docs
+  egress: []
