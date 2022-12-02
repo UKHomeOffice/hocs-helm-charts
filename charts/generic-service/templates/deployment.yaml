@@ -62,7 +62,7 @@ spec:
           args: {{- tpl (toYaml .Values.keycloak.args) . | nindent 12 }}
           {{- if not .Values.ingress.internal.enabled }}
             - --redirection-url=https://{{ .Values.keycloak.domain }}
-            - --cookie-domain={{ .Values.keycloak.domain }}
+            - --cookie-domain=https://{{ .Values.keycloak.domain }}
           {{- end }}
           volumeMounts: {{- toYaml .Values.keycloak.volumeMounts | nindent 12 }}
           ports:
@@ -78,7 +78,7 @@ spec:
           args: {{- tpl (toYaml .Values.keycloakApi.args) . | nindent 12 }}
           {{- if not .Values.ingress.internal.enabled }}
             - --redirection-url=https://{{ .Values.keycloak.domain }}
-            - --cookie-domain={{ .Values.keycloak.domain }}
+            - --cookie-domain=https://{{ .Values.keycloak.domain }}
           {{- end }}
           volumeMounts: {{- toYaml .Values.keycloak.volumeMounts | nindent 12 }}
           ports:
