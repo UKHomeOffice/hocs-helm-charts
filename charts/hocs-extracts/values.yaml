@@ -102,3 +102,7 @@ hocs-generic-service:
       springProfiles: 'extracts'
       infoService: https://hocs-info-service.{{ .Release.Namespace }}.svc.cluster.local
       caseService: https://hocs-casework.{{ .Release.Namespace }}.svc.cluster.local
+
+dcuCaseView:
+  enabled: false
+  refresh: '30 5 * * *'
