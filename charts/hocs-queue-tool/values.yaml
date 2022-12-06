@@ -21,5 +21,4 @@ hocs-generic-service:
         -Dhttps.proxyHost=hocs-outbound-proxy.{{ .Release.Namespace }}.svc.cluster.local
         -Dhttps.proxyPort=31290
         -Dhttp.nonProxyHosts=*.{{ .Release.Namespace }}.svc.cluster.local
-      springProfiles: 'aws'
       queues: []
