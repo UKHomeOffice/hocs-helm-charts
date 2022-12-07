@@ -1,4 +1,4 @@
 apiVersion: v2
 name: hocs-generic-service
 description: A generic Helm chart.
-version: 3.4.2
+version: 3.5.0
