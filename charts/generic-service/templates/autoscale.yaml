@@ -1,5 +1,6 @@
 {{- if .Values.autoscale.enabled }}
-apiVersion: autoscaling/v1
+---
+apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
   labels:
@@ -12,5 +13,17 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: {{ include "hocs-app.name" . }}
-  targetCPUUtilizationPercentage: {{ .Values.autoscale.targetCpu }}
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: {{ .Values.autoscale.targetCpu }}
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: {{ .Values.autoscale.targetMemory }}
 {{- end }}
