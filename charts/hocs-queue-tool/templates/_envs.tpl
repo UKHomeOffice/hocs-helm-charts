@@ -16,7 +16,7 @@
 - name: SERVER_PORT
   value: '{{ include "hocs-app.port" . }}'
 - name: SPRING_PROFILES_ACTIVE
-  value: '{{ tpl .Values.app.env.springProfiles . }}'
+  value: '{{ join "," .Values.app.env.queues | lower }}'
 {{- range .Values.app.env.queues }}
 - name: {{. | title | replace "-" "_" | upper }}_QUEUE
   valueFrom:

@@ -17,4 +17,3 @@ hocs-generic-service:
 
 dcuCaseView:
   enabled: false
-  refresh: '30 5 * * *'
