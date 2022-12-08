@@ -115,5 +115,5 @@ hocs-generic-service:
         backend:
           service:
             name: hocs-management-ui
-          port:
-            number: 443
+            port:
+              number: 443
