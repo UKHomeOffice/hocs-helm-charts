@@ -1,5 +1,4 @@
 ---
-clusterPrefix: ''
 
 autoscale:
   enabled: false
@@ -86,6 +85,7 @@ proxy:
 
 keycloak:
   enabled: false
+  secretName: frontend-keycloak-secret
   image:
     repository: quay.io/keycloak/keycloak-gatekeeper
     version: 8.0.2
@@ -108,7 +108,7 @@ keycloak:
       memory: 96Mi
   volumeMounts:
     - mountPath: /etc/secrets
-      name: frontend-keycloak-secret
+      name: {{ .Values.keycloak.secretName }}
       readOnly: true
 
 keycloakApi:
@@ -128,7 +128,13 @@ app:
   port: 8080
   healthcheck:
     readiness: /actuator/health/readiness
+      period: '2'
     liveness: /actuator/health/liveness
+      period: '2'
+    startup:
+      failureThreshold: '20'
+      initialDelay: '10'
+      period: '2'
   volumeMounts:
     - mountPath: /etc/keystore
       name: keystore
@@ -139,6 +145,9 @@ app:
     - mountPath: /etc/ssl/certs
       name: bundle
       readOnly: true
+  envFrom:
+    - configMapRef:
+      name: hocs-queue-config
   preStop: '[ "sh", "-c", "sleep 20" ]'
 
 ingress:
