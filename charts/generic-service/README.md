@@ -1,11 +1,5 @@
 # generic-service helm chart
 
-## Prerequisites
-
-### Helm v3 client
-
-This is installed and used within our pipelines, but it is also useful to have installed locally for troubleshooting. See <https://helm.sh/docs/intro/install/>
-
 ## How to use this chart
 
 Each project should define an umbrella chart, in most cases this will be essentially an empty helm chart, which specifies this chart as a dependency.
@@ -105,7 +99,9 @@ then include a file defined as `other-hocs-templates-name`
 ### Setting namespace specific values 
 
 These are best placed in the [hocs-helmfile](https://github.com/UKHomeOffice/hocs-helmfile) project.
-But for projects that want to exist outside of that:
+Dev values are best placed in the repo they relate to .e.g. hocs-templates.yaml in the hocs-templates/helm folder
+
+But for projects that want to exist outside of hocs-helmfile:
 
 These file should only contain values that differ between namespaces.
 
@@ -157,7 +153,6 @@ hocs-generic-service:
       enabled: false/true  
     external:
       enabled: false/true
-    
 
 ```
 

@@ -1,8 +1,22 @@
 # Hocs Helm Charts
 
+
 Here you will find a common place for helm charts used by the Hocs service.
 
 The charts are built and published via github actions and github pages, see <https://github.com/helm/chart-releaser>
+
+## Prerequisites
+
+### Helm v3 client
+
+This is installed and used within our pipelines, but it is also useful to have installed locally for troubleshooting. See <https://helm.sh/docs/intro/install/>
+
+### Helm diff plugin
+
+```bash
+helm plugin install https://github.com/databus23/helm-diff
+```
+
 
 ## Quick start
 
@@ -51,31 +65,25 @@ helm dependency update <directory-containing-project-chart>
 Then can run a dry-run upgrade to see the effect:
 
 ```bash
-helm upgrade --dry-run <release-name> <directory-containing-project-chart> --values <values-file>
+helm upgrade --dry-run <release-name e.g. hocs-templates> <directory-containing-project-chart> --values <values-file>
 ```
 
 You can also inspect the templated yaml by running the following:
 
 ```bash
-helm -n my-namespace template <release-name> <directory-containing-project-chart> --values <values-file>
+helm -n my-namespace template <release-name e.g. hocs-templates> <directory-containing-project-chart> --values <values-file>
 ```
 
-You can install the Helm diff plugin
+You can compare your changes against what is in a namespace
 
 ```bash
-helm plugin install https://github.com/databus23/helm-diff
-```
-
-and compare your changes against what is in a namespace
-
-```bash
-helm diff upgrade <release-name> <directory-containing-project-chart> --set hocs-generic-service.version=1.2.3 --namespace=<namespace> -n <namespace>
+helm diff upgrade <release-name e.g. hocs-templates> <directory-containing-project-chart> --set hocs-generic-service.version=1.2.3 --namespace=<namespace> -n <namespace>
 ```
 
 To install to an environment (dev preferably):
 
 ```bash
-helm upgrade <release-name> <directory-containing-project-chart> \
+helm upgrade <release-name e.g. hocs-templates> <directory-containing-project-chart> \
 --cleanup-on-fail \
 --install \
 --reset-values \
