@@ -124,5 +124,5 @@ hocs-generic-service:
         backend:
           service:
             name: hocs-extracts
-          port:
-            number: 443
+            port:
+              number: 443
