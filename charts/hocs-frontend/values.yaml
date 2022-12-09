@@ -112,11 +112,17 @@ hocs-generic-service:
       enabled: true
       host: www.{{ .Values.clusterPrefix }}.homeoffice.gov.uk
     paths:
-      - backend:
-          serviceName: hocs-frontend
-          servicePort: 443
-        path: /
-      - backend:
-          serviceName: hocs-extracts
-          servicePort: 443
-        path: /export
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: hocs-frontend
+            port:
+              number: 443
+      - path: /export
+        pathType: Prefix
+        backend:
+          service:
+            name: hocs-extracts
+            port:
+              number: 443

@@ -110,7 +110,10 @@ hocs-generic-service:
       enabled: true
       host: www.{{ .Values.clusterPrefix }}-management.homeoffice.gov.uk
     paths:
-      - backend:
-          serviceName: hocs-management-ui
-          servicePort: 443
-        path: /
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: hocs-management-ui
+            port:
+              number: 443
