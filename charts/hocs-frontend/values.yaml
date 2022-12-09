@@ -117,8 +117,8 @@ hocs-generic-service:
         backend:
           service:
             name: hocs-frontend
-          port:
-            number: 443
+            port:
+              number: 443
       - path: /export
         pathType: Prefix
         backend:
