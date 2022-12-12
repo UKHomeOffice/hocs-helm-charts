@@ -16,7 +16,7 @@
 - name: SERVER_PORT
   value: '{{ include "hocs-app.port" . }}'
 - name: HOCS_CASE_SERVICE
-  value: '{{ tpl .Values.app.env.caseService . }}'
+  value: '{{ tpl .Values.app.env.caseworkService . }}'
 - name: HOCS_INFO_SERVICE
   value: '{{ tpl .Values.app.env.infoService . }}'
 - name: HOCS_DOCUMENT_SERVICE

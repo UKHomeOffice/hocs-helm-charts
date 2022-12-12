@@ -1,6 +1,14 @@
 ---
 nameOverride: hocs-info-service
 
+selector:
+  ingress:
+    required: false
+  outbound:
+    required: true
+  database:
+    required: true
+
 autoscale:
   enabled: false
   minReplicas: 2
@@ -11,6 +19,7 @@ service:
   enabled: true
   port: 443
   portName: 'http'
+  protocol: 'TCP'
   targetPort: 10443
 
 deployment:
@@ -88,7 +97,7 @@ app:
       -Dhttp.nonProxyHosts=*.{{ .Release.Namespace }}.svc.cluster.local
     springProfiles: 'sns, sqs'
     allowedDomains: ''
-    caseService: https://hocs-casework.{{ .Release.Namespace }}.svc.cluster.local
+    caseworkService: https://hocs-casework.{{ .Release.Namespace }}.svc.cluster.local
     docsService: https://hocs-docs.{{ .Release.Namespace }}.svc.cluster.local
   resources:
     limits:
