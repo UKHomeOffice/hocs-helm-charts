@@ -51,4 +51,6 @@
     secretKeyRef:
       name: {{ .Release.Namespace }}-workflow-rds
       key: password
+- name: HOCS_SCREENS_ADDITIONALFOLDERS
+  value: '{{ tpl .Values.app.env.hocsScreensAdditionalFolders . }}'
 {{- end -}}
