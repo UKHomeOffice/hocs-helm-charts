@@ -16,3 +16,4 @@ hocs-generic-service:
       caseService: https://hocs-casework.{{ .Release.Namespace }}.svc.cluster.local
       infoService: https://hocs-info-service.{{ .Release.Namespace }}.svc.cluster.local
       docsService: https://hocs-docs.{{ .Release.Namespace }}.svc.cluster.local
+      hocsScreensAdditionalFolders: ''
