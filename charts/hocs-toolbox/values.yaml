@@ -5,7 +5,7 @@ selector:
   ingress:
     required: false
   outbound:
-    required: false
+    required: true
   database:
     required: true
 
