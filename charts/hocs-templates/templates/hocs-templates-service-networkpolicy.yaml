@@ -31,4 +31,4 @@ spec:
               role: hocs-docs
         - podSelector:
             matchLabels:
-              role: hocs-info-services
+              role: hocs-info-service
