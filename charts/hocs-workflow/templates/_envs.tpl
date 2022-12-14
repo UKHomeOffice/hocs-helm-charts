@@ -53,4 +53,21 @@
       key: password
 - name: HOCS_SCREENS_ADDITIONALFOLDERS
   value: '{{ tpl .Values.app.env.hocsScreensAdditionalFolders . }}'
+- name: AWS_SNS_AUDIT_SEARCH_TOPIC_NAME
+  value: {{ .Release.Namespace }}-sns
+- name: AWS_SNS_AUDIT_SEARCH_ACCOUNT_ACCESS_KEY
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Release.Namespace }}-audit-sqs
+      key: access_key_id
+- name: AWS_SNS_AUDIT_SEARCH_ACCOUNT_SECRET_KEY
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Release.Namespace }}-audit-sqs
+      key: secret_access_key
+- name: AWS_SNS_AUDIT_SEARCH_ACCOUNT_ID
+  valueFrom:
+    configMapKeyRef:
+      name: hocs-queue-config
+      key: AWS_ACCOUNT_ID
 {{- end -}}
