@@ -11,8 +11,8 @@ spec:
     - Ingress
   ingress:
     - ports:
-        - port: {{ .Values.service.targetPort }}
-          protocol: {{ .Values.service.protocol }}
+        - port: 10443
+          protocol: TCP
       from:
         - podSelector: null
           matchLabels:

@@ -11,8 +11,8 @@ spec:
     - Egress
   egress:
     - ports:
-        - port: {{ .Values.service.port }}
-          protocol: {{ .Values.service.protocol }}
+        - port: 443
+          protocol: TCP
       to:
         - podSelector:
             matchLabels:

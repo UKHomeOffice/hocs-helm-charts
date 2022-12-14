@@ -12,8 +12,8 @@ spec:
     - Egress
   ingress:
     - ports:
-        - port: {{ .Values.service.targetPort }}
-          protocol: {{ .Values.service.protocol }}
+        - port: 10443
+          protocol: TCP
       from:
         - podSelector:
             matchLabels:
@@ -23,8 +23,8 @@ spec:
               role: hocs-frontend
   egress:
     - ports:
-        - port: {{ .Values.service.port }}
-          protocol: {{ .Values.service.protocol }}
+        - port: 443
+          protocol: TCP
       to:
         - podSelector:
             matchLabels:
