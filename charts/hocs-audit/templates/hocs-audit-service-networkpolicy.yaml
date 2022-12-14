@@ -14,6 +14,6 @@ spec:
         - port: 10443
           protocol: TCP
       from:
-        - podSelector: null
+        - podSelector:
             matchLabels:
               role: hocs-casework
