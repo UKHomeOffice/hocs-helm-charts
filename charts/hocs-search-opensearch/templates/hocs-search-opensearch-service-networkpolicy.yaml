@@ -2,7 +2,7 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: hocs-notify-policy
+  name: hocs-opensearch-policy
 spec:
   podSelector:
     matchLabels:
