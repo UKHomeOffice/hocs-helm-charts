@@ -15,5 +15,5 @@ spec:
           protocol: TCP
       from:
         - podSelector: null
-          matchLabels:
-            role: hocs-casework
+            matchLabels:
+              role: hocs-casework

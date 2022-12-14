@@ -8,11 +8,11 @@ spec:
     matchLabels:
       outbound: required
   policyTypes:
-  - Egress
+    - Egress
   egress:
     - ports:
         - port: 31290
-          protocol: { { .Values.service.protocol } }
+          protocol: {{ .Values.service.protocol }}
       to:
         - podSelector:
             matchLabels:
