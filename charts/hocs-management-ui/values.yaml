@@ -2,8 +2,11 @@
 hocs-generic-service:
   nameOverride: hocs-management-ui
 
-  deployment:
-    selectorRole: hocs-frontend
+  selector:
+    ingress:
+      required: true
+    outbound:
+      required: true
 
   app:
     image:

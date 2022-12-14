@@ -55,7 +55,7 @@ hocs-generic-service:
       -Dhttps.proxyHost=hocs-outbound-proxy.{{ .Release.Namespace }}.svc.cluster.local
       -Dhttps.proxyPort=31290
       -Dhttp.nonProxyHosts=*.{{ .Release.Namespace }}.svc.cluster.local
-    caseService: https://hocs-casework.{{ .Release.Namespace }}.svc.cluster.local
+    caseworkService: https://hocs-casework.{{ .Release.Namespace }}.svc.cluster.local
     infoService: https://hocs-info-service.{{ .Release.Namespace }}.svc.cluster.local
     docsService: https://hocs-docs.{{ .Release.Namespace }}.svc.cluster.local
 ```

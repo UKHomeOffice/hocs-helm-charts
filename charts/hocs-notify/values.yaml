@@ -2,6 +2,10 @@
 hocs-generic-service:
   nameOverride: hocs-notify
 
+  selector:
+    outbound:
+      required: true
+
   service:
     enabled: false
 

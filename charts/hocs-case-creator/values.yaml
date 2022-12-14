@@ -2,6 +2,10 @@
 hocs-generic-service:
   nameOverride: hocs-case-creator
 
+  selector:
+    outbound:
+      required: true
+
   service:
     enabled: false
 

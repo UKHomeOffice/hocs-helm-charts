@@ -11,6 +11,7 @@ service:
   enabled: true
   port: 31290
   portName: 'http'
+  protocol: 'TCP'
   targetPort: 3129
 
 deployment:
