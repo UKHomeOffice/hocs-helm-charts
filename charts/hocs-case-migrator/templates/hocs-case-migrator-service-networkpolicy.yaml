@@ -1,0 +1,22 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: hocs-case-migrator-service-policy
+spec:
+  podSelector:
+    matchLabels:
+      role: hocs-case-migrator
+  policyTypes:
+    - Egress
+  egress:
+    - ports:
+        - port: {{ .Values.service.port }}
+          protocol: {{ .Values.service.protocol }}
+      to:
+        - podSelector:
+            matchLabels:
+              role: hocs-casework
+        - podSelector:
+            matchLabels:
+              role: hocs-workflow

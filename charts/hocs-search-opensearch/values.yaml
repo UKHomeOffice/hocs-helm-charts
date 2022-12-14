@@ -2,6 +2,10 @@
 hocs-generic-service:
   nameOverride: hocs-search-opensearch
 
+  selector:
+    outbound:
+      required: true
+
   app:
     image:
       repository: quay.io/ukhomeofficedigital/hocs-search

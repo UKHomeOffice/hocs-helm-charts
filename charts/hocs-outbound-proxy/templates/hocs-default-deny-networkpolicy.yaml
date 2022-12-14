@@ -1,0 +1,24 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: hocs-default-deny-policy
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress: []
+  egress:
+    - to:
+      - namespaceSelector:
+          matchLabels:
+            name: kube-tls
+    - to:
+      - namespaceSelector:
+          matchLabels:
+            name: kube-certificates
+    - to:
+      - namespaceSelector:
+          matchLabels:
+            name: kube-system

@@ -1,0 +1,19 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: hocs-notify-policy
+spec:
+  podSelector:
+    matchLabels:
+      role: hocs-notify
+  policyTypes:
+    - Egress
+  egress:
+    - ports:
+        - port: {{ .Values.service.port }}
+          protocol: {{ .Values.service.protocol }}
+      to:
+        - podSelector:
+            matchLabels:
+              role: hocs-info-service

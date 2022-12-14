@@ -8,15 +8,12 @@ spec:
     matchLabels:
       role: hocs-outbound-proxy
   policyTypes:
-    - Ingress
-    - Egress
+  - Ingress
+  - Egress
   ingress:
     - from:
-        - podSelector:
-            matchLabels:
-              role: hocs-frontend
-        - podSelector:
-            matchLabels:
-              role: hocs-backend
+      - podSelector:
+          matchLabels:
+            outbound: required
   egress:
     - {}

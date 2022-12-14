@@ -1,0 +1,19 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: hocs-audit-service-policy
+spec:
+  podSelector:
+    matchLabels:
+      role: hocs-audit
+  policyTypes:
+    - Ingress
+  ingress:
+    - ports:
+        - port: {{ .Values.service.targetPort }}
+          protocol: {{ .Values.service.protocol }}
+      from:
+        - podSelector: null
+          matchLabels:
+            role: hocs-casework

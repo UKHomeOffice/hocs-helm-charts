@@ -1,0 +1,19 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: hocs-converter-service-policy
+spec:
+  podSelector:
+    matchLabels:
+      role: hocs-docs-converter
+  policyTypes:
+    - Ingress
+  ingress:
+    - ports:
+        - port: {{ .Values.service.targetPort }}
+          protocol: {{ .Values.service.protocol }}
+      from:
+        - podSelector:
+            matchLabels:
+              role: hocs-docs

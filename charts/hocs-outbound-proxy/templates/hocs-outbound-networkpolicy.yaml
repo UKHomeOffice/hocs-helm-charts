@@ -1,0 +1,19 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: hocs-outbound-policy
+spec:
+  podSelector:
+    matchLabels:
+      outbound: required
+  policyTypes:
+  - Egress
+  egress:
+    - ports:
+        - port: 31290
+          protocol: { { .Values.service.protocol } }
+      to:
+        - podSelector:
+            matchLabels:
+              role: hocs-outbound-proxy

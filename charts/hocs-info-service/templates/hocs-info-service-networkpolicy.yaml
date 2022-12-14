@@ -1,0 +1,49 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: hocs-info-service-policy
+spec:
+  podSelector:
+    matchLabels:
+      role: hocs-info-service
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    - ports:
+        - port: {{ .Values.service.targetPort }}
+          protocol: {{ .Values.service.protocol }}
+      from:
+        - podSelector:
+            matchLabels:
+              role: hocs-casework
+        - podSelector:
+            matchLabels:
+              role: hocs-extracts
+        - podSelector:
+            matchLabels:
+              role: hocs-frontend
+        - podSelector:
+            matchLabels:
+              role: hocs-management-ui
+        - podSelector:
+            matchLabels:
+              role: hocs-notify
+        - podSelector:
+            matchLabels:
+              role: hocs-templates
+        - podSelector:
+            matchLabels:
+              role: hocs-workflow
+  egress:
+    - ports:
+        - port: {{ .Values.service.port }}
+          protocol: {{ .Values.service.protocol }}
+      to:
+        - podSelector:
+            matchLabels:
+              role: hocs-casework
+        - podSelector:
+            matchLabels:
+              role: hocs-docs

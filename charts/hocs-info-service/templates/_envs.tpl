@@ -16,7 +16,7 @@
 - name: SPRING_PROFILES_ACTIVE
   value: '{{ tpl .Values.app.env.springProfiles . }}'
 - name: HOCS_CASE_SERVICE
-  value: '{{ tpl .Values.app.env.caseService . }}'
+  value: '{{ tpl .Values.app.env.caseworkService . }}'
 - name: HOCS_DOCUMENT_SERVICE
   value: '{{ tpl .Values.app.env.docsService . }}'
 - name: DB_HOST

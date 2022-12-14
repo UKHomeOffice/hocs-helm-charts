@@ -2,6 +2,14 @@
 hocs-generic-service:
   nameOverride: hocs-extracts
 
+  selector:
+    ingress:
+      required: true
+    outbound:
+      required: true
+    database:
+      required: true
+
   proxy:
     enabled: true
     env:
@@ -101,7 +109,7 @@ hocs-generic-service:
         -Dhttp.nonProxyHosts=*.{{ .Release.Namespace }}.svc.cluster.local
       springProfiles: 'extracts'
       infoService: https://hocs-info-service.{{ .Release.Namespace }}.svc.cluster.local
-      caseService: https://hocs-casework.{{ .Release.Namespace }}.svc.cluster.local
+      caseworkService: https://hocs-casework.{{ .Release.Namespace }}.svc.cluster.local
 
 dcuCaseView:
   enabled: false

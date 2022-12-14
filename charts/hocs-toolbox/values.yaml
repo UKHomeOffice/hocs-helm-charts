@@ -1,6 +1,14 @@
 ---
 nameOverride: hocs-toolbox
 
+selector:
+  ingress:
+    required: false
+  outbound:
+    required: true
+  database:
+    required: true
+
 deployment:
   selectorRole: hocs-backend
   replicas: 1

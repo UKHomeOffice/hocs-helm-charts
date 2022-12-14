@@ -2,6 +2,10 @@
 hocs-generic-service:
   nameOverride: hocs-search-consumer-opensearch
 
+  selector:
+    outbound:
+      required: true
+
   service:
     enabled: false
 
