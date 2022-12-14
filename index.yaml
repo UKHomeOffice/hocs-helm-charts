@@ -1457,6 +1457,13 @@ entries:
     version: 2.0.0
   hocs-outbound-proxy:
   - apiVersion: v2
+    created: "2022-12-14T17:10:32.405506821Z"
+    digest: 7926def72642daadd431c36b297afd4b2365b89b754e0a78952a61c6c588100c
+    name: hocs-outbound-proxy
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-outbound-proxy-4.0.2/hocs-outbound-proxy-4.0.2.tgz
+    version: 4.0.2
+  - apiVersion: v2
     created: "2022-12-14T16:33:25.221657657Z"
     digest: 976a68fcc7457aa051e45e7ef4a5a8df27cfc2ee930750cd40177f45e6f3217e
     name: hocs-outbound-proxy
@@ -2208,4 +2215,4 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-workflow-2.0.0/hocs-workflow-2.0.0.tgz
     version: 2.0.0
-generated: "2022-12-14T16:51:12.465119696Z"
+generated: "2022-12-14T17:10:32.405892623Z"
