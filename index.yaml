@@ -2,6 +2,17 @@ apiVersion: v1
 entries:
   hocs-audit:
   - apiVersion: v2
+    created: "2022-12-14T16:33:25.081814743Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^5.0.0
+    digest: e7115e2824c7070ccef2d607dcdc3aec4eef96150c5cb4821663aac6f8c195f7
+    name: hocs-audit
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-audit-4.0.2/hocs-audit-4.0.2.tgz
+    version: 4.0.2
+  - apiVersion: v2
     created: "2022-12-14T16:21:02.51439694Z"
     dependencies:
     - name: hocs-generic-service
@@ -1435,6 +1446,13 @@ entries:
     version: 2.0.0
   hocs-outbound-proxy:
   - apiVersion: v2
+    created: "2022-12-14T16:33:25.221657657Z"
+    digest: 976a68fcc7457aa051e45e7ef4a5a8df27cfc2ee930750cd40177f45e6f3217e
+    name: hocs-outbound-proxy
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-outbound-proxy-4.0.1/hocs-outbound-proxy-4.0.1.tgz
+    version: 4.0.1
+  - apiVersion: v2
     created: "2022-12-14T15:45:44.436262672Z"
     digest: 5a6c4183a48467e46060e000b2ba141df76d3608d7eb099f4ee74f34f0b13282
     name: hocs-outbound-proxy
@@ -2157,4 +2175,4 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-workflow-2.0.0/hocs-workflow-2.0.0.tgz
     version: 2.0.0
-generated: "2022-12-14T16:21:05.098753423Z"
+generated: "2022-12-14T16:33:25.222032956Z"
