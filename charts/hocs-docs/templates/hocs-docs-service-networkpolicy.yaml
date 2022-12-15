@@ -35,7 +35,7 @@ spec:
               role: hocs-workflow
   egress:
     - ports:
-        - port: 443
+        - port: 10443
           protocol: TCP
       to:
         - namespaceSelector:

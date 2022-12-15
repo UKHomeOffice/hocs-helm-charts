@@ -2,7 +2,7 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: hocs-notify-policy
+  name: hocs-notify-service-policy
 spec:
   podSelector:
     matchLabels:
@@ -11,7 +11,7 @@ spec:
     - Egress
   egress:
     - ports:
-        - port: 443
+        - port: 10443
           protocol: TCP
       to:
         - podSelector:

@@ -23,7 +23,7 @@ spec:
               role: hocs-frontend
   egress:
     - ports:
-        - port: 443
+        - port: 10443
           protocol: TCP
       to:
         - podSelector:
