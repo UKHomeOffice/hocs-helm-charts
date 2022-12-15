@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "hocs-app.name" . }}
+  labels:
+    version: {{ .Values.version }}
+  annotations: {{- toYaml .Values.deployment.annotations | nindent 4 }}
+spec:
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+    matchLabels:
+      name: {{ include "hocs-app.name" . }}
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels: {{- include "hocs-app.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ include "hocs-app.name" . }}
+          image: '{{ .Values.app.image.repository }}:{{ .Values.version }}'
+          securityContext: {{- toYaml .Values.deployment.securityContext | nindent 12 }}
+          env:
+            {{- include (printf "%s.%s" .Values.nameOverride "envs") . | nindent 12 }}
+          resources: {{- toYaml .Values.app.resources | nindent 12 }}

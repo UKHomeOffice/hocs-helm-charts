@@ -1,0 +1,26 @@
+---
+hocs-generic-service:
+  nameOverride: hocs-case-creator
+
+  selector:
+    outbound:
+      required: true
+
+  service:
+    enabled: false
+
+  app:
+    image:
+      repository: quay.io/ukhomeofficedigital/hocs-case-creator
+    env:
+      javaOpts: >-
+        -XX:InitialRAMPercentage=50 -XX:MaxRAMPercentage=65
+        -Djava.security.egd=file:/dev/./urandom
+        -Djavax.net.ssl.trustStore=/etc/keystore/truststore.jks
+        -Dhttps.proxyHost=hocs-outbound-proxy.{{ .Release.Namespace }}.svc.cluster.local
+        -Dhttps.proxyPort=31290
+        -Dhttp.nonProxyHosts=*.{{ .Release.Namespace }}.svc.cluster.local
+      springProfiles: 'sqs, s3'
+      caseworkService: https://hocs-casework.{{ .Release.Namespace }}.svc.cluster.local
+      workflowService: https://hocs-workflow.{{ .Release.Namespace }}.svc.cluster.local
+      ignoredTypes: ''

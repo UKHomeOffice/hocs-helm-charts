@@ -1,0 +1,128 @@
+---
+nameOverride: hocs-info-service
+
+selector:
+  ingress:
+    required: false
+  outbound:
+    required: true
+  database:
+    required: true
+
+autoscale:
+  enabled: false
+  minReplicas: 2
+  maxReplicas: 3
+  targetCpu: 50
+
+service:
+  enabled: true
+  port: 443
+  portName: 'http'
+  protocol: 'TCP'
+  targetPort: 10443
+
+deployment:
+  replicas: 1
+  selectorRole: hocs-backend
+  securityContext:
+    runAsNonRoot: true
+    capabilities:
+      drop:
+        - SETUID
+        - SETGID
+  volumes:
+    - name: keystore
+      emptyDir:
+        medium: "Memory"
+    - name: certs
+      emptyDir:
+        medium: 'Memory'
+    - name: secrets
+      emptyDir:
+        medium: "Memory"
+    - name: bundle
+      configMap:
+        name: bundle
+
+truststore:
+  enabled: true
+  image:
+    repository: quay.io/ukhomeofficedigital/cfssl-sidekick-jks
+    version: v0.0.9
+  args:
+    - --certs=/certs
+    - --command=/usr/bin/create-keystore.sh /certs/tls.pem /certs/tls-key.pem /etc/ssl/certs/acp-root.crt
+    - --domain={{ include "hocs-deploymentEnvs.name" . }}.{{ .Release.Namespace }}.svc.cluster.local
+    - --onetime=true
+  resources:
+    limits:
+      cpu: 100m
+      memory: 96Mi
+    requests:
+      cpu: 100m
+      memory: 96Mi
+  volumeMounts:
+    - name: certs
+      mountPath: /certs
+    - name: keystore
+      mountPath: /etc/keystore
+    - name: bundle
+      mountPath: /etc/ssl/certs
+      readOnly: true
+
+data:
+  enabled: false
+  image:
+    repository: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/hocs/
+    name: ''
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 256Mi
+    requests:
+      cpu: 100m
+      memory: 256Mi
+
+app:
+  image:
+    repository: quay.io/ukhomeofficedigital/hocs-info-service
+  env:
+    javaOpts: >-
+      -XX:InitialRAMPercentage=50 -XX:MaxRAMPercentage=65
+      -Djava.security.egd=file:/dev/./urandom
+      -Djavax.net.ssl.trustStore=/etc/keystore/truststore.jks
+      -Dhttps.proxyHost=hocs-outbound-proxy.{{ .Release.Namespace }}.svc.cluster.local
+      -Dhttps.proxyPort=31290
+      -Dhttp.nonProxyHosts=*.{{ .Release.Namespace }}.svc.cluster.local
+    springProfiles: 'sns, sqs, refreshCountries'
+    allowedDomains: ''
+    caseworkService: https://hocs-casework.{{ .Release.Namespace }}.svc.cluster.local
+    docsService: https://hocs-docs.{{ .Release.Namespace }}.svc.cluster.local
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 1280Mi
+    requests:
+      cpu: 100m
+      memory: 1280Mi
+  port: 8080
+  healthcheck:
+    readiness: /actuator/health/readiness
+    liveness: /actuator/health/liveness
+  volumeMounts:
+    - mountPath: /etc/keystore
+      name: keystore
+      readOnly: true
+    - mountPath: /certs
+      name: certs
+      readOnly: true
+    - mountPath: /etc/ssl/certs
+      name: bundle
+      readOnly: true
+  preStop: '[ "sh", "-c", "sleep 20" ]'
+
+
+members:
+  enabled: false
+  refresh: ''
