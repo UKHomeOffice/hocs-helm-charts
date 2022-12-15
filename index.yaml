@@ -1253,6 +1253,17 @@ entries:
     version: 1.0.0
   hocs-management-ui:
   - apiVersion: v2
+    created: "2022-12-15T14:50:36.405262806Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^5.0.0
+    digest: a697693b572c4afab709d70ebf878057e954f844b9ca8f65489e284028a1ff9e
+    name: hocs-management-ui
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-management-ui-4.0.3/hocs-management-ui-4.0.3.tgz
+    version: 4.0.3
+  - apiVersion: v2
     created: "2022-12-15T14:13:53.178247102Z"
     dependencies:
     - name: hocs-generic-service
@@ -2361,4 +2372,4 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-workflow-2.0.0/hocs-workflow-2.0.0.tgz
     version: 2.0.0
-generated: "2022-12-15T14:13:54.148822341Z"
+generated: "2022-12-15T14:50:36.40598723Z"
