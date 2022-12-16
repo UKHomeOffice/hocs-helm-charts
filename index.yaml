@@ -202,6 +202,17 @@ entries:
     version: 2.0.0
   hocs-search-opensearch:
   - apiVersion: v2
+    created: "2022-12-16T14:27:15.092656239Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^5.0.0
+    digest: a4675c5461f7411788a83ba677a9821379263cbb3d94c7d3a56d7d70d1908483
+    name: hocs-search-opensearch
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-search-opensearch-2.0.4/hocs-search-opensearch-2.0.4.tgz
+    version: 2.0.4
+  - apiVersion: v2
     created: "2022-12-15T23:03:33.755734359Z"
     dependencies:
     - name: hocs-generic-service
@@ -244,4 +255,4 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-workflow-4.1.0/hocs-workflow-4.1.0.tgz
     version: 4.1.0
-generated: "2022-12-16T09:52:33.466810882Z"
+generated: "2022-12-16T14:27:15.092668339Z"
