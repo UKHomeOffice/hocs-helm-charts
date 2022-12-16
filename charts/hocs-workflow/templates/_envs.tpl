@@ -15,6 +15,8 @@
 {{- end }}
 - name: SERVER_PORT
   value: '{{ include "hocs-app.port" . }}'
+- name: SPRING_PROFILES_ACTIVE
+  value: '{{ tpl .Values.app.env.springProfiles . }}'
 - name: HOCS_CASE_SERVICE
   value: '{{ tpl .Values.app.env.caseworkService . }}'
 - name: HOCS_INFO_SERVICE
