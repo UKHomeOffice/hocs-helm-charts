@@ -1,6 +1,6 @@
 apiVersion: v2
 name: hocs-extracts
-version: 4.0.2
+version: 4.1.0
 dependencies:
   - name: hocs-generic-service
     version: ^5.0.0

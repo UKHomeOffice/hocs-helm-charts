@@ -3,6 +3,8 @@ apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: hocs-refresh-dcu-caseview
+  labels:
+    role: hocs-refresh-dcu-caseview
 spec:
   schedule: {{ .Values.dcuCaseView.refresh }}
   concurrencyPolicy: Forbid
