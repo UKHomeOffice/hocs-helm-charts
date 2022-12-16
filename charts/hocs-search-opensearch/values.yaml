@@ -1,6 +1,7 @@
 ---
 hocs-generic-service:
   nameOverride: hocs-search-opensearch
+  role: hocs-search
 
   selector:
     outbound:
