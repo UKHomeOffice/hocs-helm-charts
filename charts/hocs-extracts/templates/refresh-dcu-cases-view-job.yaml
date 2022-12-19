@@ -1,0 +1,30 @@
+{{- if .Values.dcuCaseView.enabled }}
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: hocs-refresh-dcu-cases-view
+  labels:
+    role: hocs-refresh-dcu-cases-view
+spec:
+  schedule: {{ .Values.dcuCaseView.refresh }}
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      backoffLimit: 0
+      template:
+        metadata:
+          labels:
+            name: hocs-refresh-dcu-cases-view
+            role: hocs-refresh-dcu-cases-view
+        spec:
+          containers:
+            - name: hocs-refresh-dcu-cases-view
+              securityContext:
+                runAsNonRoot: true
+                runAsUser: 1000
+              image: quay.io/ukhomeofficedigital/hocs-base-image:latest
+              command: [ "/bin/sh", "-c" ]
+              args:
+                - "curl -vk -X POST -H 'User-Agent: Refresh DCU_AGGREGATED_CASES' https://hocs-extracts.{{ .Release.Namespace }}.svc.cluster.local/admin/export/custom/DCU_AGGREGATED_CASES/refresh"
+          restartPolicy: Never
+{{- end }}

@@ -17,6 +17,9 @@ spec:
       from:
         - podSelector:
             matchLabels:
+              role: hocs-refresh-members-job
+        - podSelector:
+            matchLabels:
               role: hocs-casework
         - podSelector:
             matchLabels:

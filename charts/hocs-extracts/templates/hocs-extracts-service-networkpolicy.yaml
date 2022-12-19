@@ -17,7 +17,7 @@ spec:
       from:
         - podSelector:
             matchLabels:
-              role: hocs-refresh-dcu-caseview
+              role: hocs-refresh-dcu-cases-view
   egress:
     - ports:
         - port: 10443
