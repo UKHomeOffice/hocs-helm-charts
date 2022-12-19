@@ -8,7 +8,16 @@ spec:
     matchLabels:
       role: hocs-extracts
   policyTypes:
+    - Ingress
     - Egress
+  ingress:
+    - ports:
+        - port: 10443
+          protocol: TCP
+      from:
+        - podSelector:
+            matchLabels:
+              role: hocs-refresh-dcu-caseview
   egress:
     - ports:
         - port: 10443

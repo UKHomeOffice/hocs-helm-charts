@@ -1,0 +1,19 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: hocs-extracts-service-policy
+spec:
+  podSelector:
+    matchLabels:
+      role: hocs-refresh-dcu-caseview
+  policyTypes:
+    - Egress
+  egress:
+    - ports:
+        - port: 10443
+          protocol: TCP
+      to:
+        - podSelector:
+            matchLabels:
+              role: hocs-extracts
