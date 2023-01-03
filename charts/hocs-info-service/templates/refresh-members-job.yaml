@@ -25,6 +25,6 @@ spec:
               image: quay.io/ukhomeofficedigital/hocs-base-image:latest
               command: [ "/bin/sh", "-c" ]
               args:
-                - "curl -vk -X POST -H 'User-Agent: Refresh Members' https://hocs-info-service.{{ .Release.Namespace }}.svc.cluster.local/admin/member/refresh"
+                - "curl -vk -X GET -H 'User-Agent: Refresh Members' https://hocs-info-service.{{ .Release.Namespace }}.svc.cluster.local/admin/member/refresh"
           restartPolicy: Never
 {{- end }}
