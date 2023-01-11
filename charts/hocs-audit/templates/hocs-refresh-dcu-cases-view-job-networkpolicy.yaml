@@ -16,4 +16,4 @@ spec:
       to:
         - podSelector:
             matchLabels:
-              role: hocs-extracts
+              role: hocs-audit

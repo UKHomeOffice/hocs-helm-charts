@@ -25,6 +25,6 @@ spec:
               image: quay.io/ukhomeofficedigital/hocs-base-image:latest
               command: [ "/bin/sh", "-c" ]
               args:
-                - "curl -vk -X POST -H 'User-Agent: Refresh DCU_AGGREGATED_CASES' https://hocs-extracts.{{ .Release.Namespace }}.svc.cluster.local/admin/export/custom/DCU_AGGREGATED_CASES/refresh"
+                - "curl -vk -X POST -H 'User-Agent: Refresh DCU_AGGREGATED_CASES' https://hocs-audit.{{ .Release.Namespace }}.svc.cluster.local/admin/export/custom/DCU_AGGREGATED_CASES/refresh"
           restartPolicy: Never
 {{- end }}
