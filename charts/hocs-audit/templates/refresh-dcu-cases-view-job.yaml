@@ -16,6 +16,7 @@ spec:
           labels:
             name: hocs-refresh-dcu-cases-view
             role: hocs-refresh-dcu-cases-view
+            database: required
         spec:
           containers:
             - name: hocs-refresh-dcu-cases-view
