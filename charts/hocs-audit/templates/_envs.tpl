@@ -47,6 +47,8 @@
     secretKeyRef:
       name: {{ .Release.Namespace }}-audit-rds
       key: password
+- name: DB_QUERY_TIMEOUT
+  value: '0'
 - name: AUDIT_QUEUE_NAME
   value: {{ .Release.Namespace }}-audit-sqs
 - name: AWS_SQS_AUDIT_URL
