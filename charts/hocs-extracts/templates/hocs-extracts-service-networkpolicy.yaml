@@ -10,14 +10,6 @@ spec:
   policyTypes:
     - Ingress
     - Egress
-  ingress:
-    - ports:
-        - port: 10443
-          protocol: TCP
-      from:
-        - podSelector:
-            matchLabels:
-              role: hocs-refresh-dcu-cases-view
   egress:
     - ports:
         - port: 10443
