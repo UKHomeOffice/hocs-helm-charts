@@ -26,7 +26,7 @@ spec:
               image: quay.io/ukhomeofficedigital/hocs-toolbox:latest
               command: [ "/bin/sh", "-c" ]
               args:
-                - psql -tA -c "REFRESH MATERIALIZED VIEW CONCURRENTLY ${DB_SCHEMA_NAME}.dcu_aggregated_cases;"
+                - psql -tA -c "REFRESH MATERIALIZED VIEW CONCURRENTLY ${DB_SCHEMA_NAME}.dcu_aggregated_cases; SELECT last_refresh FROM ${DB_SCHEMA_NAME}.dcu_aggregated_cases LIMIT 1;"
               env:
                 - name: PGHOST
                   valueFrom:
