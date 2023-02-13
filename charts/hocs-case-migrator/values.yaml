@@ -20,7 +20,7 @@ hocs-generic-service:
         -Dhttps.proxyHost=hocs-outbound-proxy.{{ .Release.Namespace }}.svc.cluster.local
         -Dhttps.proxyPort=31290
         -Dhttp.nonProxyHosts=*.{{ .Release.Namespace }}.svc.cluster.local
-      springProfiles: 'sqs, s3'
+      springProfiles: 'sqs, s3, migration'
       caseworkService: https://hocs-casework.{{ .Release.Namespace }}.svc.cluster.local
       workflowService: https://hocs-workflow.{{ .Release.Namespace }}.svc.cluster.local
       ignoredTypes: ''
