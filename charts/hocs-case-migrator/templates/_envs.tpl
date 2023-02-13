@@ -23,8 +23,6 @@
   value: '{{ tpl .Values.app.env.workflowService . }}'
 - name: MESSAGE_IGNORED_TYPES
   value: '{{ tpl .Values.app.env.ignoredTypes . }}'
-- name: CASE_CREATOR_MODE
-  value: 'migration'
 - name: AWS_SQS_CASE_CREATOR_ACCOUNT_ACCESS_KEY
   valueFrom:
     secretKeyRef:
