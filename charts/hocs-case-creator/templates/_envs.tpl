@@ -21,8 +21,8 @@
   value: '{{ tpl .Values.app.env.caseworkService . }}'
 - name: CASE_CREATOR_WORKFLOW_SERVICE
   value: '{{ tpl .Values.app.env.workflowService . }}'
-- name: MESSAGE_IGNORED_TYPES
-  value: '{{ tpl .Values.app.env.ignoredTypes . }}'
+- name: AWS_SQS_IGNORE_MESSAGES
+  value: '{{ tpl .Values.app.env.ignoreMessages . }}'
 - name: AWS_SQS_CASE_CREATOR_ACCOUNT_ACCESS_KEY
   valueFrom:
     secretKeyRef:
