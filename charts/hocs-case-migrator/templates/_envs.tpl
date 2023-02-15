@@ -78,4 +78,34 @@
     secretKeyRef:
       name: hocs-case-migrator-identities
       key: migration_user
+- name: DB_HOST
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Release.Namespace }}-case-migrator-rds
+      key: host
+- name: DB_PORT
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Release.Namespace }}-case-migrator-rds
+      key: port
+- name: DB_NAME
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Release.Namespace }}-case-migrator-rds
+      key: name
+- name: DB_SCHEMA_NAME
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Release.Namespace }}-case-migrator-rds
+      key: schema_name
+- name: DB_USERNAME
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Release.Namespace }}-case-migrator-rds
+      key: user_name
+- name: DB_PASSWORD
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Release.Namespace }}-case-migrator-rds
+      key: password
 {{- end -}}
