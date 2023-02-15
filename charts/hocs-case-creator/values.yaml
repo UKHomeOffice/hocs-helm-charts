@@ -23,4 +23,4 @@ hocs-generic-service:
       springProfiles: 'sqs, s3, ukvi'
       caseworkService: https://hocs-casework.{{ .Release.Namespace }}.svc.cluster.local
       workflowService: https://hocs-workflow.{{ .Release.Namespace }}.svc.cluster.local
-      ignoredTypes: ''
+      ignoreMessages: 'false'
