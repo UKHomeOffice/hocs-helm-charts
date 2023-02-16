@@ -58,21 +58,21 @@
     secretKeyRef:
       name: {{ .Release.Namespace }}-untrusted-s3
       key: kms_key_id
-- name: CASE_CREATOR_IDENTITIES_COMPLAINTS_UKVI_GROUP
+- name: CASE_CREATOR_IDENTITY_GROUP
   valueFrom:
     secretKeyRef:
-      name: hocs-case-creator-identities
-      key: complaint_ukvi_group
-- name: CASE_CREATOR_IDENTITIES_COMPLAINTS_UKVI_USER
+      name: hocs-ukvi-webform-identity
+      key: group
+- name: CASE_CREATOR_IDENTITY_USER
   valueFrom:
     secretKeyRef:
-      name: hocs-case-creator-identities
-      key: complaint_ukvi_user
-- name: CASE_CREATOR_IDENTITIES_COMPLAINTS_UKVI_TEAM
+      name: hocs-ukvi-webform-identity
+      key: user
+- name: CASE_CREATOR_IDENTITY_TEAM
   valueFrom:
     secretKeyRef:
-      name: hocs-case-creator-identities
-      key: complaint_ukvi_team
+      name: hocs-ukvi-webform-identity
+      key: team
 - name: DB_HOST
   valueFrom:
     secretKeyRef:
