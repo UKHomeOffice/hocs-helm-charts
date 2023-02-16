@@ -5,6 +5,8 @@ hocs-generic-service:
   selector:
     outbound:
       required: true
+    database:
+      required: true
 
   service:
     enabled: false
