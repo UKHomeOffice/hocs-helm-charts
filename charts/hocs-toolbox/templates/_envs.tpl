@@ -2,12 +2,6 @@
 - name: KUBE_NAMESPACE
   value: {{ $.Release.Namespace }}
 {{- range .Values.app.env.databases }}
-- name: {{. | title | replace "-" "_" | upper }}_QUEUE
-  valueFrom:
-    secretKeyRef:
-      name: {{ $.Release.Namespace }}-{{. | title | lower }}-sqs
-      key: sqs_queue_url
-      optional: true
 - name: {{. | title | replace "-" "_" | upper }}_DB_HOST
   valueFrom:
     secretKeyRef:
