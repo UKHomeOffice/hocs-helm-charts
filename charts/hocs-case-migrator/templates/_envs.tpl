@@ -23,17 +23,17 @@
   value: '{{ tpl .Values.app.env.workflowService . }}'
 - name: AWS_SQS_IGNORE_MESSAGES
   value: '{{ tpl .Values.app.env.ignoreMessages . }}'
-- name: AWS_SQS_CASE_CREATOR_ACCOUNT_ACCESS_KEY
+- name: AWS_SQS_QUEUE_ACCOUNT_ACCESS_KEY
   valueFrom:
     secretKeyRef:
       name: {{ .Release.Namespace }}-case-migrator-sqs
       key: access_key_id
-- name: AWS_SQS_CASE_CREATOR_ACCOUNT_SECRET_KEY
+- name: AWS_SQS_QUEUE_ACCOUNT_SECRET_KEY
   valueFrom:
     secretKeyRef:
       name: {{ .Release.Namespace }}-case-migrator-sqs
       key: secret_access_key
-- name: AWS_SQS_CASE_MIGRATOR_URL
+- name: AWS_SQS_QUEUE_URL
   valueFrom:
     secretKeyRef:
       name: {{ .Release.Namespace }}-case-migrator-sqs
