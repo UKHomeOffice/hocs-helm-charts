@@ -27,4 +27,4 @@ hocs-generic-service:
 jobs:
   process:
     enabled: false
-    schedule: '0 7-22 * * 1-5'
+    schedule: '0 8-18 * * 1-5'
