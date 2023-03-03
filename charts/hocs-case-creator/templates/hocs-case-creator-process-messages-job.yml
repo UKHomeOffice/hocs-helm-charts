@@ -2,9 +2,9 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  name: hocs-case-creator-process-messages
+  name: hocs-case-creator-process-messages-job
   labels:
-    role: hocs-case-creator-process-messages
+    role: hocs-case-creator-process-messages-job
 spec:
   schedule: {{ .Values.jobs.process.schedule }}
   concurrencyPolicy: Forbid
@@ -14,23 +14,18 @@ spec:
       template:
         metadata:
           labels:
-            name: hocs-case-creator-process-messages
-            role: hocs-case-creator-process-messages
+            name: hocs-case-creator-process-messages-job
+            role: hocs-case-creator-process-messages-job
         spec:
           containers:
-            - name: hocs-case-creator-process-messages
+            - name: hocs-case-creator-process-messages-job
               securityContext:
                 runAsNonRoot: true
                 runAsUser: 1000
               image: quay.io/ukhomeofficedigital/hocs-base-image:latest
               command: [ "/bin/sh", "-c" ]
               args:
-                - |
-                  curl -vk
-                  -H 'User-Agent: Process Messages' 
-                  -H 'Content-Type: application/json' 
-                  https://hocs-case-creator.{{ .Release.Namespace }}.svc.cluster.local/process
-                  -d "{ \"maxMessages\": ${MAX_MESSAGES} }"
+                - "curl -vk https://hocs-case-creator.{{ .Release.Namespace }}.svc.cluster.local/process -H \"User-Agent: Process Messages\" -H \"Content-Type: application/json\" -d \"{ \"maxMessages\": $MAX_MESSAGES }\""
               env:
                 - name: MAX_MESSAGES
                   valueFrom:
