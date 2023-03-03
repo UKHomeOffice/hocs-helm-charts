@@ -8,7 +8,16 @@ spec:
     matchLabels:
       role: hocs-case-creator
   policyTypes:
+    - Ingress
     - Egress
+  ingress:
+    - ports:
+        - port: {{ .Values.service.targetPort }}
+          protocol: {{ .Values.service.protocol }}
+      from:
+        - podSelector:
+            matchLabels:
+              role: hocs-case-creator-process-messages-job
   egress:
     - ports:
         - port: 10443
