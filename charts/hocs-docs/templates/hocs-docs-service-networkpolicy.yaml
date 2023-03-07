@@ -41,6 +41,6 @@ spec:
         - namespaceSelector:
             matchLabels:
               name: virus-scan
-        - podSelector:
+        - namespaceSelector:
             matchLabels:
-              role: hocs-docs-converter
+              name: hocs-converter
