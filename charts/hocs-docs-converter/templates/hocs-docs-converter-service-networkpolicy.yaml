@@ -13,7 +13,3 @@ spec:
     - ports:
         - port: 10443
           protocol: TCP
-      from:
-        - podSelector:
-            matchLabels:
-              role: hocs-docs
