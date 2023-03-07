@@ -20,4 +20,4 @@ hocs-generic-service:
       springProfiles: 'aws'
       elasticPrefix: '{{ .Release.Namespace }}-latest'
       elasticMode: ''
-      searchQueueName: '{{ .Release.Namespace }}-search-sqs'
+      searchQueueName: '{{ .Release.Namespace }}-opensearch-sqs'
