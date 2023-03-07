@@ -26,31 +26,31 @@
 - name: ELASTICSEARCH_HOST
   valueFrom:
     secretKeyRef:
-      name: {{ .Release.Namespace }}-elasticsearch
+      name: {{ .Release.Namespace }}-opensearch
       key: endpoint
 - name: ELASTICSEARCH_ACCESS_KEY
   valueFrom:
     secretKeyRef:
-      name: {{ .Release.Namespace }}-elasticsearch
+      name: {{ .Release.Namespace }}-opensearch
       key: access_key_id
 - name: ELASTICSEARCH_SECRET_KEY
   valueFrom:
     secretKeyRef:
-      name: {{ .Release.Namespace }}-elasticsearch
+      name: {{ .Release.Namespace }}-opensearch
       key: secret_access_key
 - name: SEARCH_SQS_QUEUE_URL
   valueFrom:
     secretKeyRef:
-      name: {{ .Release.Namespace }}-search-sqs
+      name: {{ .Release.Namespace }}-opensearch-sqs
       key: sqs_queue_url
 - name: SEARCH_SQS_ACCESS_KEY
   valueFrom:
     secretKeyRef:
-      name: {{ .Release.Namespace }}-search-sqs
+      name: {{ .Release.Namespace }}-opensearch-sqs
       key: access_key_id
 - name: SEARCH_SQS_SECRET_KEY
   valueFrom:
     secretKeyRef:
-      name: {{ .Release.Namespace }}-search-sqs
+      name: {{ .Release.Namespace }}-opensearch-sqs
       key: secret_access_key
 {{- end -}}
