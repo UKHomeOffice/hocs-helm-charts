@@ -1,4 +1,4 @@
-{{- define "hocs-search.envs" }}
+{{- define "hocs-search-multiple.envs" }}
 - name: JAVA_OPTS
   value: '{{ tpl .Values.app.env.javaOpts . }}'
 {{- if not .Values.proxy.enabled }}
