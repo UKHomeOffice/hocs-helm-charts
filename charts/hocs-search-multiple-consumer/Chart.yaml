@@ -1,6 +1,6 @@
 apiVersion: v2
 name: hocs-search-multiple-consumer
-version: 1.0.1
+version: 1.0.2
 dependencies:
   - name: hocs-generic-service
     version: ^5.0.0

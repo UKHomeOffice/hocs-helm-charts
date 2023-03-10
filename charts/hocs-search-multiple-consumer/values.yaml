@@ -1,6 +1,6 @@
 ---
 hocs-generic-service:
-  nameOverride: hocs-search-consumer-multiple
+  nameOverride: hocs-search-multiple-consumer
 
   selector:
     outbound:
