@@ -18,8 +18,12 @@ spec:
   ingress:
     - ports:
         {{- toYaml .Values.networkpolicy.ports | nindent 8 }}
+      {{- if .Values.networkpolicy.ingress }}
       from:
         {{- toYaml .Values.networkpolicy.from | nindent 8 }}
+      {{- end }}
+      {{- if .Values.networkpolicy.egress }}
       to:
         {{- toYaml .Values.networkpolicy.to | nindent 8 }}
+      {{- end }}
 {{- end }}
