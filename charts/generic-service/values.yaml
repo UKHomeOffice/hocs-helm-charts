@@ -127,6 +127,8 @@ keycloakApi:
 
 networkpolicy:
   enabled: false
+  ingress: false
+  egress: false
 
 app:
   image: {}

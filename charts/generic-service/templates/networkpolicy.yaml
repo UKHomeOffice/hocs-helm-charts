@@ -9,12 +9,17 @@ spec:
     matchLabels:
       role: {{ include "hocs-app.name" . }}
   policyTypes:
+    {{- if .Values.networkpolicy.ingress }}
     - Ingress
+    {{- end }}
+    {{- if .Values.networkpolicy.egress }}
+    - Egress
+    {{- end }}
   ingress:
     - ports:
-        {{ - toYaml .Values.networkpolicy.ports | nindent 8 }}
+        {{- toYaml .Values.networkpolicy.ports | nindent 8 }}
       from:
-        {{ - toYaml .Values.networkpolicy.from | nindent 8 }}
+        {{- toYaml .Values.networkpolicy.from | nindent 8 }}
       to:
         {{- toYaml .Values.networkpolicy.to | nindent 8 }}
 {{- end }}
