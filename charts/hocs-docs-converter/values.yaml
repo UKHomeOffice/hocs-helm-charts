@@ -2,6 +2,18 @@
 hocs-generic-service:
   nameOverride: hocs-docs-converter
 
+  networkpolicy:
+    enabled: true
+    ingress:
+      enabled: true
+      ports:
+        - port: 10443
+          protocol: TCP
+      from:
+        - podSelector:
+            matchLabels:
+              role: hocs-docs
+
   app:
     image:
       repository: quay.io/ukhomeofficedigital/hocs-docs-converter
