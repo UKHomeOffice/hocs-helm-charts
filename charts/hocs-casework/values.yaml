@@ -8,6 +8,57 @@ hocs-generic-service:
     database:
       required: true
 
+  networkpolicy:
+    enabled: true
+    ingress:
+      enabled: true
+      ports:
+        - port: 10443
+          protocol: TCP
+      from:
+        - podSelector:
+            matchLabels:
+              role: hocs-case-creator
+        - podSelector:
+            matchLabels:
+              role: hocs-case-migrator
+        - podSelector:
+            matchLabels:
+              role: hocs-extracts
+        - podSelector:
+            matchLabels:
+              role: hocs-frontend
+        - podSelector:
+            matchLabels:
+              role: hocs-info-service
+        - podSelector:
+            matchLabels:
+              role: hocs-management-ui
+        - podSelector:
+            matchLabels:
+              role: hocs-templates
+        - podSelector:
+            matchLabels:
+              role: hocs-workflow
+    egress:
+      enabled: true
+      ports:
+        - port: 10443
+          protocol: TCP
+      to:
+        - podSelector:
+            matchLabels:
+              role: hocs-audit
+        - podSelector:
+            matchLabels:
+              role: hocs-docs
+        - podSelector:
+            matchLabels:
+              role: hocs-info-service
+        - podSelector:
+            matchLabels:
+              role: hocs-search
+
   app:
     image:
       repository: quay.io/ukhomeofficedigital/hocs-casework
