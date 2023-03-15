@@ -6,6 +6,18 @@ hocs-generic-service:
     outbound:
       required: true
 
+  networkpolicy:
+    enabled: true
+    egress:
+      enabled: true
+      ports:
+        - port: 10443
+          protocol: TCP
+      to:
+        - podSelector:
+            matchLabels:
+              role: hocs-info-service
+
   service:
     enabled: false
 
