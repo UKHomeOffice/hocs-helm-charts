@@ -8,6 +8,27 @@ hocs-generic-service:
     outbound:
       required: true
 
+  networkpolicy:
+    enabled: true
+    egress:
+      enabled: true
+      ports:
+        - port: 10443
+          protocol: TCP
+      to:
+        - podSelector:
+            matchLabels:
+              role: hocs-casework
+        - podSelector:
+            matchLabels:
+              role: hocs-docs
+        - podSelector:
+            matchLabels:
+              role: hocs-info-service
+        - podSelector:
+            matchLabels:
+              role: hocs-workflow
+
   app:
     image:
       repository: quay.io/ukhomeofficedigital/hocs-management-ui
