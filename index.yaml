@@ -1,3 +1,12 @@
 apiVersion: v1
-entries: {}
-generated: "2023-03-15T20:24:37.782942Z"
+entries:
+  hocs-generic-service:
+  - apiVersion: v2
+    created: "2023-03-15T20:29:41.635669681Z"
+    description: A generic Helm chart.
+    digest: 9b418a440e8c7e750df44fa28f439f5540b81d7b959d32170c47733b58db90f9
+    name: hocs-generic-service
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-generic-service-5.3.0/hocs-generic-service-5.3.0.tgz
+    version: 5.3.0
+generated: "2023-03-15T20:29:41.635682581Z"
