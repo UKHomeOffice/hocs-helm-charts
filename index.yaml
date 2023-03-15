@@ -105,6 +105,14 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-generic-service-5.3.0/hocs-generic-service-5.3.0.tgz
     version: 5.3.0
+  hocs-info-service:
+  - apiVersion: v2
+    created: "2023-03-15T20:37:29.142375721Z"
+    digest: a3b8e180af7df944027ee8adeeb706676db7b9080c9241904604a8dc9f23c2a6
+    name: hocs-info-service
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-info-service-2.1.2/hocs-info-service-2.1.2.tgz
+    version: 2.1.2
   hocs-management-ui:
   - apiVersion: v2
     created: "2023-03-15T20:31:19.781958917Z"
@@ -129,6 +137,26 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-notify-4.0.3/hocs-notify-4.0.3.tgz
     version: 4.0.3
+  hocs-outbound-proxy:
+  - apiVersion: v2
+    created: "2023-03-15T20:37:29.289587763Z"
+    digest: f1fbe4e6b728452a7c56a4175c64e697138cf9828bf24b4db0a97f6adb681488
+    name: hocs-outbound-proxy
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-outbound-proxy-4.0.5/hocs-outbound-proxy-4.0.5.tgz
+    version: 4.0.5
+  hocs-queue-tool:
+  - apiVersion: v2
+    created: "2023-03-15T20:37:29.464412132Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^5.3.0
+    digest: 101a03afacad4236b96059e33cff969794e7192bf240bcf0c9fb354f785a195e
+    name: hocs-queue-tool
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-queue-tool-5.0.1/hocs-queue-tool-5.0.1.tgz
+    version: 5.0.1
   hocs-search:
   - apiVersion: v2
     created: "2023-03-15T20:31:20.33736583Z"
@@ -141,6 +169,18 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-search-6.0.1/hocs-search-6.0.1.tgz
     version: 6.0.1
+  hocs-search-consumer:
+  - apiVersion: v2
+    created: "2023-03-15T20:37:29.612391483Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^5.3.0
+    digest: 99291486b6ffe985a4797cc2b22e0c47323eb6b01136afffa1a8dad1bd35c6b2
+    name: hocs-search-consumer
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-search-consumer-5.0.1/hocs-search-consumer-5.0.1.tgz
+    version: 5.0.1
   hocs-search-multiple:
   - apiVersion: v2
     created: "2023-03-15T20:31:20.585020514Z"
@@ -153,6 +193,18 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-search-multiple-1.0.2/hocs-search-multiple-1.0.2.tgz
     version: 1.0.2
+  hocs-search-multiple-consumer:
+  - apiVersion: v2
+    created: "2023-03-15T20:37:29.764949988Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^5.3.0
+    digest: ed403e7958972dd982b4b237ea8914153b582d9f25665c242143b6d639a39524
+    name: hocs-search-multiple-consumer
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-search-multiple-consumer-1.0.3/hocs-search-multiple-consumer-1.0.3.tgz
+    version: 1.0.3
   hocs-templates:
   - apiVersion: v2
     created: "2023-03-15T20:31:20.818793788Z"
@@ -165,6 +217,14 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-templates-4.0.3/hocs-templates-4.0.3.tgz
     version: 4.0.3
+  hocs-toolbox:
+  - apiVersion: v2
+    created: "2023-03-15T20:37:29.947883153Z"
+    digest: 8700d108f1a7eb1e4a67b995c7b2f86ee5f3edd20afd7e2feb11f8b837784916
+    name: hocs-toolbox
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-toolbox-2.1.2/hocs-toolbox-2.1.2.tgz
+    version: 2.1.2
   hocs-workflow:
   - apiVersion: v2
     created: "2023-03-15T20:31:21.065764072Z"
@@ -177,4 +237,4 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-workflow-4.1.2/hocs-workflow-4.1.2.tgz
     version: 4.1.2
-generated: "2023-03-15T20:31:21.065886472Z"
+generated: "2023-03-15T20:37:29.947890753Z"
