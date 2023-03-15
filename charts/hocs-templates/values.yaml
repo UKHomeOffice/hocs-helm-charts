@@ -2,6 +2,33 @@
 hocs-generic-service:
   nameOverride: hocs-templates
 
+  networkpolicy:
+    enabled: true
+    ingress:
+      enabled: true
+      ports:
+        - port: 10443
+          protocol: TCP
+      from:
+        - podSelector:
+            matchLabels:
+              role: hocs-frontend
+    egress:
+      enabled: true
+      ports:
+        - port: 10443
+          protocol: TCP
+      to:
+        - podSelector:
+            matchLabels:
+              role: hocs-casework
+        - podSelector:
+            matchLabels:
+              role: hocs-docs
+        - podSelector:
+            matchLabels:
+              role: hocs-info-service
+
   app:
     image:
       repository: quay.io/ukhomeofficedigital/hocs-templates
