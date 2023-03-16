@@ -9,10 +9,6 @@ hocs-generic-service:
       ports:
         - port: 10443
           protocol: TCP
-      from:
-        - podSelector:
-            matchLabels:
-              role: hocs-docs
 
   app:
     image:
