@@ -73,6 +73,17 @@ entries:
     version: 4.0.3
   hocs-docs-converter:
   - apiVersion: v2
+    created: "2023-03-16T22:24:12.069359585Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^5.3.0
+    digest: 8aade9b7f057d195307948165e80b24d8f90ad42b0c376656e9d806b73aaa0af
+    name: hocs-docs-converter
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-docs-converter-4.0.3/hocs-docs-converter-4.0.3.tgz
+    version: 4.0.3
+  - apiVersion: v2
     created: "2023-03-15T20:31:19.126654129Z"
     dependencies:
     - name: hocs-generic-service
@@ -259,4 +270,4 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-workflow-4.1.2/hocs-workflow-4.1.2.tgz
     version: 4.1.2
-generated: "2023-03-16T22:11:29.040599979Z"
+generated: "2023-03-16T22:24:12.069375085Z"
