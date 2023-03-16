@@ -21,8 +21,6 @@
   value: '{{ tpl .Values.app.env.caseworkService . }}'
 - name: CASE_CREATOR_WORKFLOW_SERVICE
   value: '{{ tpl .Values.app.env.workflowService . }}'
-- name: CASE_CREATOR_DOCUMENT_SERVICE
-  value: '{{ tpl .Values.app.env.docsService . }}'
 - name: AWS_SQS_IGNORE_MESSAGES
   value: '{{ tpl .Values.app.env.ignoreMessages . }}'
 - name: AWS_SQS_QUEUE_ACCOUNT_ACCESS_KEY
