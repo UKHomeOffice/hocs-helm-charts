@@ -10,42 +10,27 @@ hocs-generic-service:
 
   networkpolicy:
     enabled: true
-    ingress:
-      enabled: true
-      ports:
-        - port: 10443
-          protocol: TCP
-      from:
-        - podSelector:
-            matchLabels:
-              role: hocs-casework
-        - podSelector:
-            matchLabels:
-              role: hocs-frontend
-        - podSelector:
-            matchLabels:
-              role: hocs-info-service
-        - podSelector:
-            matchLabels:
-              role: hocs-management-ui
-        - podSelector:
-            matchLabels:
-              role: hocs-templates
-        - podSelector:
-            matchLabels:
-              role: hocs-workflow
     egress:
       enabled: true
       ports:
         - port: 10443
           protocol: TCP
       to:
-        - namespaceSelector:
-            matchLabels:
-              name: virus-scan
         - podSelector:
             matchLabels:
-              role: hocs-docs-converter
+              role: hocs-casework
+        - podSelector:
+            matchLabels:
+              role: hocs-docs
+        - podSelector:
+            matchLabels:
+              role: hocs-info-service
+        - podSelector:
+            matchLabels:
+              role: hocs-templates
+        - podSelector:
+            matchLabels:
+              role: hocs-workflow
 
   app:
     image:
