@@ -46,9 +46,6 @@ hocs-generic-service:
         - namespaceSelector:
             matchLabels:
               name: hocs-converter
-        - podSelector:
-            matchLabels:
-              role: hocs-docs-converter
 
   app:
     image:
