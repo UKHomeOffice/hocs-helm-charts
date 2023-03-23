@@ -78,12 +78,14 @@ clamav:
     # clamav.scaling.maxReplicas -- The maximum number of clamav replicas
     maxReplicas: 20
     # clamav.scaling.cpuTarget -- The target cpu usage percentage for clamav
-    cpuTarget: 30
+    cpuTarget: 80
   limits:
     # clamav.limits.fileSize -- The largest file size scanable by clamav, in MB
     fileSize: 200
     # clamav.limits.scanSize -- The largest scan size permitted in clamav, in MB
     scanSize: 1000
+    # https://blog.clamav.net/2019/08/
+    scanTime: 300000
     # clamav.limits.connectionQueueLength -- Maximum length the queue of pending connections may grow to
     connectionQueueLength: 200
     # clamav.limits.maxThreads --Maximum number of threads running at the same time.
