@@ -14,6 +14,7 @@ data:
     Foreground yes
     MaxScanSize {{.Values.clamav.limits.scanSize}}M
     MaxFileSize {{.Values.clamav.limits.fileSize}}M
+    MaxScanTime {{.Values.clamav.limits.scanTime}}
 
     #  Close the connection when the data size limit is exceeded.
     #  The value should match your MTA's limit for a maximum attachment size.
