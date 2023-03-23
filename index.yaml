@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  clamav:
+  - apiVersion: v2
+    appVersion: 0.4.2
+    created: "2023-03-23T09:58:26.898892801Z"
+    description: A Helm chart for deploying a clamav-http service on kubernetes
+    digest: 6e311eb74047b5c062ef6511f0e6c753b4292b8808925f1a04dc3cca9e8e0213
+    name: clamav
+    type: application
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/clamav-0.4.2/clamav-0.4.2.tgz
+    version: 0.4.2
   hocs-audit:
   - apiVersion: v2
     created: "2023-03-15T20:31:18.008989198Z"
@@ -292,4 +303,4 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-workflow-4.1.2/hocs-workflow-4.1.2.tgz
     version: 4.1.2
-generated: "2023-03-20T11:11:33.165972572Z"
+generated: "2023-03-23T09:58:26.898915101Z"
