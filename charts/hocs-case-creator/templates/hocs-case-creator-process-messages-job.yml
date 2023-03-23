@@ -25,7 +25,7 @@ spec:
               image: quay.io/ukhomeofficedigital/hocs-base-image:latest
               command: [ "/bin/sh", "-c" ]
               args:
-                - 'http_status = $(curl -vk https://hocs-case-creator.cs-dev.svc.cluster.local/process -H "User-Agent: Process Messages" -H "Content-Type: application/json" -d "{ \"maxMessages\": 10 }");if [[ $http_status -eq 200 ]]; then exit 0; else exit 1; fi'
+                - 'http_status = $(curl -vk https://hocs-case-creator.{{ .Release.Namespace }}.svc.cluster.local/process -H "User-Agent: Process Messages" -H "Content-Type: application/json" -d "{ \"maxMessages\": $MAX_MESSAGES }");if [[ $http_status -eq 200 ]]; then exit 0; else exit 1; fi'
               env:
                 - name: MAX_MESSAGES
                   valueFrom:
