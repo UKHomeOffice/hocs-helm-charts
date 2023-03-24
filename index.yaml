@@ -35,6 +35,17 @@ entries:
     version: 6.0.3
   hocs-case-creator:
   - apiVersion: v2
+    created: "2023-03-24T15:43:57.224721387Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^5.3.0
+    digest: 9e03109fd8972e77e1877ccf0581a91eb49811226a96fe1c043d0c9a4f2e44f7
+    name: hocs-case-creator
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-case-creator-7.1.0/hocs-case-creator-7.1.0.tgz
+    version: 7.1.0
+  - apiVersion: v2
     created: "2023-03-15T20:31:18.25339668Z"
     dependencies:
     - name: hocs-generic-service
@@ -313,4 +324,4 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-workflow-4.1.2/hocs-workflow-4.1.2.tgz
     version: 4.1.2
-generated: "2023-03-23T16:57:12.699538264Z"
+generated: "2023-03-24T15:43:57.224740387Z"
