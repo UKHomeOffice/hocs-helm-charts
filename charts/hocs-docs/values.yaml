@@ -43,9 +43,9 @@ hocs-generic-service:
         - namespaceSelector:
             matchLabels:
               name: virus-scan
-        - podSelector:
+        - namespaceSelector:
             matchLabels:
-              role: hocs-docs-converter
+              name: hocs-converter
 
   app:
     image:
@@ -61,7 +61,7 @@ hocs-generic-service:
       #  on most services the line above is -Dhttp.nonProxyHosts=*.{{ .Release.Namespace }}.svc.cluster.local to discourage cross namespace communication, but this service talks to 'clamav.virus-scan.svc.cluster.local' too.
       springProfiles: 'sqs, sns, s3'
       clamAvRoot: 'https4://clamav.virus-scan.svc.cluster.local'
-      converterRoot: 'https4://hocs-docs-converter.{{ .Release.Namespace }}.svc.cluster.local'
+      converterRoot: 'https4://hocs-docs-converter.hocs-converter.svc.cluster.local'
       docsQueueName: '{{ .Release.Namespace }}-document-sqs'
       docsQueueNameDlq: '{{ .Release.Namespace }}-document-sqs-dlq'
       trustedBucketName: '{{ .Release.Namespace }}-trusted-s3'
