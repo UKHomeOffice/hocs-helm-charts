@@ -22,6 +22,9 @@ hocs-generic-service:
         - podSelector:
             matchLabels:
               role: hocs-workflow
+        - podSelector:
+            matchLabels:
+              role: hocs-docs
 
   service:
     enabled: false
