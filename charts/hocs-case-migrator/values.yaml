@@ -43,4 +43,5 @@ hocs-generic-service:
       springProfiles: 'sqs, s3, migration'
       caseworkService: https://hocs-casework.{{ .Release.Namespace }}.svc.cluster.local
       workflowService: https://hocs-workflow.{{ .Release.Namespace }}.svc.cluster.local
+      docsService: https://hocs-docs.{{ .Release.Namespace }}.svc.cluster.local
       ignoreMessages: 'false'
