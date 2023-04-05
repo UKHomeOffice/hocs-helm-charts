@@ -14,5 +14,8 @@ spec:
         - port: 5432
           protocol: {{ .Values.service.protocol }}
       to:
+{{- $cidr := splitList "," .Values.rdsCIDR }}
+{{- range $cidr }}
         - ipBlock:
-            cidr: {{ .Values.rdsCIDR | quote }}
+            cidr: {{ . | quote }}
+{{- end }}
