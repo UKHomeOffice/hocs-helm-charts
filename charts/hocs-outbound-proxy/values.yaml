@@ -35,10 +35,10 @@ app:
   resources:
     limits:
       cpu: 100m
-      memory: 96Mi
+      memory: 256Mi
     requests:
       cpu: 100m
-      memory: 96Mi
+      memory: 256Mi
   volumeMounts:
     - name: hocs-outbound-proxy-config
       mountPath: /etc/squid

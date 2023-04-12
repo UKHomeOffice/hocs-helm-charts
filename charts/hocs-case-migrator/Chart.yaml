@@ -1,7 +1,7 @@
 apiVersion: v2
 name: hocs-case-migrator
-version: 9.0.2
+version: 9.0.3
 dependencies:
   - name: hocs-generic-service
-    version: ^5.3.0
+    version: ^5.3.2
     repository: https://ukhomeoffice.github.io/hocs-helm-charts
