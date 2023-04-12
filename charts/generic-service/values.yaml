@@ -80,11 +80,11 @@ proxy:
   env: []
   resources:
     limits:
-      cpu: 300m
-      memory: 96Mi
+      cpu: 100m
+      memory: 128Mi
     requests:
       cpu: 100m
-      memory: 96Mi
+      memory: 128Mi
   volumeMounts:
     - name: certs
       mountPath: /certs
@@ -110,11 +110,11 @@ keycloak:
   targetPort: '8081'
   resources:
     limits:
-      cpu: 300m
-      memory: 96Mi
+      cpu: 100m
+      memory: 128Mi
     requests:
       cpu: 100m
-      memory: 96Mi
+      memory: 128Mi
   volumeMounts:
     - mountPath: /etc/secrets
       name: frontend-keycloak-secret
