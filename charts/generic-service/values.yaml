@@ -14,7 +14,7 @@ autoscale:
   minReplicas: 2
   maxReplicas: 3
   targetCpu: 80
-  targetMemory: 85
+  targetMemory: 90
 
 service:
   enabled: true
