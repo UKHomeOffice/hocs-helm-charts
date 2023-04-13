@@ -14,7 +14,7 @@ autoscale:
   minReplicas: 2
   maxReplicas: 3
   targetCpu: 80
-  targetMemory: 85
+  targetMemory: 90
 
 service:
   enabled: true
@@ -54,7 +54,7 @@ truststore:
   args:
     - --certs=/certs
     - --command=/usr/bin/create-keystore.sh /certs/tls.pem /certs/tls-key.pem /etc/ssl/certs/acp-root.crt
-    - --domain={{ include "hocs-deploymentEnvs.name" . }}.{{ .Release.Namespace }}.svc.cluster.local
+    - --domain={{ include "hocs-app.name" . }}.{{ .Release.Namespace }}.svc.cluster.local
     - --onetime=true
   resources:
     limits:
@@ -80,11 +80,11 @@ proxy:
   env: []
   resources:
     limits:
-      cpu: 300m
-      memory: 96Mi
+      cpu: 100m
+      memory: 128Mi
     requests:
       cpu: 100m
-      memory: 96Mi
+      memory: 128Mi
   volumeMounts:
     - name: certs
       mountPath: /certs
@@ -110,11 +110,11 @@ keycloak:
   targetPort: '8081'
   resources:
     limits:
-      cpu: 300m
-      memory: 96Mi
+      cpu: 100m
+      memory: 128Mi
     requests:
       cpu: 100m
-      memory: 96Mi
+      memory: 128Mi
   volumeMounts:
     - mountPath: /etc/secrets
       name: frontend-keycloak-secret

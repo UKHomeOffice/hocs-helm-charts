@@ -13,6 +13,8 @@ spec:
     - ports:
         - port: 5432
           protocol: {{ .Values.service.protocol }}
+        - port: 1433
+          protocol: {{ .Values.service.protocol }}
       to:
 {{- $cidr := splitList "," .Values.rdsCIDR }}
 {{- range $cidr }}
