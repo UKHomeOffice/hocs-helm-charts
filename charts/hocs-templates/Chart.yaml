@@ -1,7 +1,7 @@
 apiVersion: v2
 name: hocs-templates
-version: 4.0.5
+version: 4.0.6
 dependencies:
   - name: hocs-generic-service
-    version: ^5.3.2
+    version: ^5.3.3
     repository: https://ukhomeoffice.github.io/hocs-helm-charts
