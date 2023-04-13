@@ -23,6 +23,9 @@ hocs-generic-service:
               role: hocs-casework
         - podSelector:
             matchLabels:
+              role: hocs-casework-readonly
+        - podSelector:
+            matchLabels:
               role: hocs-info-service
 
   proxy:
