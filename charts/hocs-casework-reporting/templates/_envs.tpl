@@ -1,4 +1,4 @@
-{{- define "hocs-casework.envs" }}
+{{- define "hocs-casework-reporting.envs" }}
 - name: JAVA_OPTS
   value: '{{ tpl .Values.app.env.javaOpts . }}'
 {{- if not .Values.proxy.enabled }}
