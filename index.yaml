@@ -214,6 +214,17 @@ entries:
     version: 4.0.3
   hocs-casework-reporting:
   - apiVersion: v2
+    created: "2023-04-21T14:48:51.244606878Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^5.3.3
+    digest: a3dc239efbd1778ee4be06bec96d8bd4be2cceec6d2fa4bdb35b53388f6903df
+    name: hocs-casework-reporting
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-casework-reporting-1.0.1/hocs-casework-reporting-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     created: "2023-04-21T10:34:57.140634657Z"
     dependencies:
     - name: hocs-generic-service
@@ -805,4 +816,4 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-workflow-4.1.2/hocs-workflow-4.1.2.tgz
     version: 4.1.2
-generated: "2023-04-21T10:34:57.140805155Z"
+generated: "2023-04-21T14:48:51.244723277Z"
