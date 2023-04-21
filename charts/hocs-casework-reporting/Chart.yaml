@@ -1,0 +1,7 @@
+apiVersion: v2
+name: hocs-casework-reporting
+version: 1.0.0
+dependencies:
+  - name: hocs-generic-service
+    version: ^5.3.3
+    repository: https://ukhomeoffice.github.io/hocs-helm-charts
