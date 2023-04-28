@@ -17,6 +17,7 @@ hocs-generic-service:
     env:
       javaOpts: >-
         -XX:InitialRAMPercentage=70 -XX:MaxRAMPercentage=70
+        -Dcom.sun.management.jmxremote
         -Djava.security.egd=file:/dev/./urandom
         -Djavax.net.ssl.trustStore=/etc/keystore/truststore.jks
         -Dhttps.proxyHost=hocs-outbound-proxy.{{ .Release.Namespace }}.svc.cluster.local
