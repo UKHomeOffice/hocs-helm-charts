@@ -1,6 +1,6 @@
 apiVersion: v2
 name: hocs-case-migrator
-version: 9.0.5
+version: 9.0.6
 dependencies:
   - name: hocs-generic-service
     version: ^5.3.3
