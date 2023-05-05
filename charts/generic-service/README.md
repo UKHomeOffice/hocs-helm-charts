@@ -52,9 +52,9 @@ hocs-generic-service:
       -XX:InitialRAMPercentage=50 -XX:MaxRAMPercentage=70
       -Djava.security.egd=file:/dev/./urandom
       -Djavax.net.ssl.trustStore=/etc/keystore/truststore.jks
-      -Dhttps.proxyHost=hocs-outbound-proxy.{{ .Release.Namespace }}.svc.cluster.local
+      -Dhttps.proxyHost=hocs-outbound-proxy.{{ include "cs-namespace" . }}.svc.cluster.local
       -Dhttps.proxyPort=31290
-      -Dhttp.nonProxyHosts=*.{{ .Release.Namespace }}.svc.cluster.local
+      -Dhttp.nonProxyHosts=*.svc.cluster.local
     caseworkService: https://hocs-casework.{{ .Release.Namespace }}.svc.cluster.local
     infoService: https://hocs-info-service.{{ .Release.Namespace }}.svc.cluster.local
     docsService: https://hocs-docs.{{ .Release.Namespace }}.svc.cluster.local
