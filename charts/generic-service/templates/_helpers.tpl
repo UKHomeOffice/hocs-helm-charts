@@ -20,6 +20,13 @@ Network policy role to use.
 {{- end }}
 
 {{/*
+CS namespace equivalent e.g. wcs-dev -> cs-dev.
+*/}}
+{{- define "cs-namespace" -}}
+{{- trimPrefix "w" .Release.namespace }}
+{{- end }}
+
+{{/*
 Selector labels
 */}}
 {{- define "hocs-app.selectorLabels" -}}
