@@ -23,7 +23,7 @@ Network policy role to use.
 CS namespace equivalent e.g. wcs-dev -> cs-dev.
 */}}
 {{- define "cs-namespace" -}}
-{{- trimPrefix "w" .Release.namespace }}
+{{- trimPrefix "w" .Release.Namespace }}
 {{- end }}
 
 {{/*
