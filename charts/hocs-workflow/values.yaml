@@ -21,6 +21,9 @@ hocs-generic-service:
               role: hocs-case-creator
         - podSelector:
             matchLabels:
+              role: hocs-case-migrator
+        - podSelector:
+            matchLabels:
               role: hocs-frontend
     egress:
       enabled: true
