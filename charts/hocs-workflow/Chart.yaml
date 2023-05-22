@@ -1,6 +1,6 @@
 apiVersion: v2
 name: hocs-workflow
-version: 4.1.6
+version: 4.1.7
 dependencies:
   - name: hocs-generic-service
     version: ^5.3.3
