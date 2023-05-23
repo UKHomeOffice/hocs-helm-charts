@@ -22,6 +22,6 @@ hocs-generic-service:
         -Dhttps.proxyPort=31290
         -Dhttp.nonProxyHosts=*.{{ .Release.Namespace }}.svc.cluster.local
       springProfiles: 'aws, consumer'
-      elasticPrefix: '{{ .Release.Namespace }}-latest'
-      elasticMode: ''
-      searchQueueName: '{{ .Release.Namespace }}-opensearch-sqs'
+      elasticPrefix: ''
+      elasticMode: 'MULTIPLE'
+      searchQueueName: '{{ .Release.Namespace }}-search-sqs'

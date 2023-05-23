@@ -41,16 +41,16 @@
 - name: SEARCH_SQS_QUEUE_URL
   valueFrom:
     secretKeyRef:
-      name: {{ .Release.Namespace }}-opensearch-sqs
+      name: {{ .Release.Namespace }}-search-sqs
       key: sqs_queue_url
 - name: SEARCH_SQS_ACCESS_KEY
   valueFrom:
     secretKeyRef:
-      name: {{ .Release.Namespace }}-opensearch-sqs
+      name: {{ .Release.Namespace }}-search-sqs
       key: access_key_id
 - name: SEARCH_SQS_SECRET_KEY
   valueFrom:
     secretKeyRef:
-      name: {{ .Release.Namespace }}-opensearch-sqs
+      name: {{ .Release.Namespace }}-search-sqs
       key: secret_access_key
 {{- end -}}
