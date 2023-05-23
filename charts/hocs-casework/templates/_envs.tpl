@@ -31,6 +31,8 @@
   value: '{{ tpl .Values.app.env.migrationUserName . }}'
 - name: MIGRATION_GROUP
   value: '{{ tpl .Values.app.env.migrationGroup . }}'
+- name: MIGRATION_ALLOW_DUPLICATE_MIGRATED_REFERENCES
+  value: '{{ tpl .Values.app.env.migrationAllowDuplicateMigratedReferences . }}'
 - name: DB_HOST
   valueFrom:
     secretKeyRef:

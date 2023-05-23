@@ -80,3 +80,4 @@ hocs-generic-service:
       migrationUserId: cms
       migrationUserName: migration
       migrationGroup: cms
+      migrationAllowDuplicateMigratedReferences: 'false'
