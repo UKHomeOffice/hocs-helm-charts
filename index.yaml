@@ -886,6 +886,17 @@ entries:
     version: 5.0.1
   hocs-search:
   - apiVersion: v2
+    created: "2023-05-24T15:21:12.888883445Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^5.3.6
+    digest: c661cd91dba73808889da374ec9edc912190b4a29cba3585c4df1e405fc7c252
+    name: hocs-search
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-search-6.1.1/hocs-search-6.1.1.tgz
+    version: 6.1.1
+  - apiVersion: v2
     created: "2023-04-28T14:42:56.929605726Z"
     dependencies:
     - name: hocs-generic-service
@@ -930,6 +941,17 @@ entries:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-search-6.0.1/hocs-search-6.0.1.tgz
     version: 6.0.1
   hocs-search-consumer:
+  - apiVersion: v2
+    created: "2023-05-24T15:21:13.082723371Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^5.3.6
+    digest: 3af1487da00aab29c04e174ed680f4facb10b2923804b8fb46bea92d0b483e8e
+    name: hocs-search-consumer
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-search-consumer-5.1.1/hocs-search-consumer-5.1.1.tgz
+    version: 5.1.1
   - apiVersion: v2
     created: "2023-04-28T14:42:57.1549621Z"
     dependencies:
@@ -1209,4 +1231,4 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-workflow-4.1.2/hocs-workflow-4.1.2.tgz
     version: 4.1.2
-generated: "2023-05-24T15:08:42.638703884Z"
+generated: "2023-05-24T15:21:13.082900073Z"
