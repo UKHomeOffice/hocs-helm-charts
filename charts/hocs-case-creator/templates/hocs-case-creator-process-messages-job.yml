@@ -6,7 +6,7 @@ metadata:
   labels:
     role: hocs-case-creator-process-messages-job
 spec:
-  schedule: {{ .Values.jobs.process.schedule }}
+  schedule: "{{ .Values.jobs.process.schedule }}"
   concurrencyPolicy: Forbid
   jobTemplate:
     spec:
