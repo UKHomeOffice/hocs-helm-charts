@@ -516,6 +516,14 @@ entries:
     version: 5.0.3
   hocs-generic-service:
   - apiVersion: v2
+    created: "2023-05-24T14:47:43.063417935Z"
+    description: A generic Helm chart.
+    digest: 949bcc5337345bfeb44b689b838996768f2e34b12e2c67a9a9220968ef53fd46
+    name: hocs-generic-service
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-generic-service-5.3.6/hocs-generic-service-5.3.6.tgz
+    version: 5.3.6
+  - apiVersion: v2
     created: "2023-05-09T07:04:23.988718089Z"
     description: A generic Helm chart.
     digest: ee237abc0a4b00405180305b170950d6e9bbf7072abd57ef735b259de5b7ed1f
@@ -1026,4 +1034,4 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-workflow-4.1.2/hocs-workflow-4.1.2.tgz
     version: 4.1.2
-generated: "2023-05-22T09:31:29.992205526Z"
+generated: "2023-05-24T14:47:43.063671638Z"
