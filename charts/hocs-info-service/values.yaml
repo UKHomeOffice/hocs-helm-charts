@@ -93,9 +93,9 @@ app:
       -Dcom.sun.management.jmxremote
       -Djava.security.egd=file:/dev/./urandom
       -Djavax.net.ssl.trustStore=/etc/keystore/truststore.jks
-      -Dhttps.proxyHost=hocs-outbound-proxy.{{ .Release.Namespace }}.svc.cluster.local
+      -Dhttps.proxyHost=hocs-outbound-proxy.{{ include "cs-namespace" . }}.svc.cluster.local
       -Dhttps.proxyPort=31290
-      -Dhttp.nonProxyHosts=*.{{ .Release.Namespace }}.svc.cluster.local
+      -Dhttp.nonProxyHosts=*.svc.cluster.local
     springProfiles: 'sns, sqs, refreshCountries'
     allowedDomains: ''
     caseworkService: https://hocs-casework.{{ .Release.Namespace }}.svc.cluster.local
