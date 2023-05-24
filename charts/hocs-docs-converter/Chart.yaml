@@ -1,7 +1,7 @@
 apiVersion: v2
 name: hocs-docs-converter
-version: 4.1.0
+version: 4.1.1
 dependencies:
   - name: hocs-generic-service
-    version: ^5.3.5
+    version: ^5.3.6
     repository: https://ukhomeoffice.github.io/hocs-helm-charts
