@@ -23,5 +23,4 @@ hocs-generic-service:
         -Dhttp.nonProxyHosts=*.svc.cluster.local
       springProfiles: 'aws, consumer'
       elasticPrefix: '{{ .Release.Namespace }}-latest'
-      elasticMode: ''
       searchQueueName: '{{ .Release.Namespace }}-opensearch-sqs'
