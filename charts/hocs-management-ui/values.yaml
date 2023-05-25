@@ -83,7 +83,7 @@ hocs-generic-service:
     args:
       - --config=/etc/secrets/data.yml
       - --discovery-url={{ .Values.keycloak.realm }}
-      - --openid-provider-proxy=http://hocs-outbound-proxy.{{ .Release.Namespace }}.svc.cluster.local:31290
+      - --openid-provider-proxy=http://hocs-outbound-proxy.{{ include "cs-namespace" . }}.svc.cluster.local:31290
       - --enable-logging=true
       - --enable-json-logging=true
       - --upstream-url=http://127.0.0.1:{{ include "hocs-app.port" . }}
@@ -110,7 +110,7 @@ hocs-generic-service:
     args:
       - --config=/etc/secrets/data.yml
       - --discovery-url={{ .Values.keycloak.realm }}
-      - --openid-provider-proxy=http://hocs-outbound-proxy.{{ .Release.Namespace }}.svc.cluster.local:31290
+      - --openid-provider-proxy=http://hocs-outbound-proxy.{{ include "cs-namespace" . }}.svc.cluster.local:31290
       - --enable-logging=true
       - --enable-json-logging=true
       - --upstream-url=http://127.0.0.1:{{ include "hocs-app.port" . }}
