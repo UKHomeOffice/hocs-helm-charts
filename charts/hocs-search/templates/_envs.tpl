@@ -19,8 +19,6 @@
   value: '{{ tpl .Values.app.env.springProfiles . }}'
 - name: ELASTICSEARCH_INDEX_PREFIX
   value: '{{ tpl .Values.app.env.elasticPrefix . }}'
-- name: ELASTICSEARCH_MODE
-  value: '{{ tpl .Values.app.env.elasticMode . }}'
 - name: ELASTICSEARCH_HOST
   valueFrom:
     secretKeyRef:
