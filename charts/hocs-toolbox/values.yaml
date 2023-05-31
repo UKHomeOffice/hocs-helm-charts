@@ -29,6 +29,8 @@ app:
       - 'docs'
       - 'workflow'
       - 'casework'
+      - 'case-creator'
+      - 'case-migrator'
   resources:
     limits:
       cpu: 100m
