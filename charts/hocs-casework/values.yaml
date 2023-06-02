@@ -81,3 +81,4 @@ hocs-generic-service:
       migrationUserName: migration
       migrationGroup: cms
       migrationAllowDuplicateMigratedReferences: 'false'
+      auditTopicName: '{{ .Release.Namespace }}-sns'

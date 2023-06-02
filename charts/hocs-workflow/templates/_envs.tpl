@@ -56,7 +56,7 @@
 - name: HOCS_SCREENS_ADDITIONALFOLDERS
   value: '{{ tpl .Values.app.env.hocsScreensAdditionalFolders . }}'
 - name: AWS_SNS_AUDIT_SEARCH_TOPIC_NAME
-  value: {{ .Release.Namespace }}-sns
+  value: '{{ tpl .Values.app.env.auditTopicName . }}'
 - name: AWS_SNS_AUDIT_SEARCH_ACCOUNT_ACCESS_KEY
   valueFrom:
     secretKeyRef:

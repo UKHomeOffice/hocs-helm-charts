@@ -58,3 +58,4 @@ hocs-generic-service:
       infoService: https://hocs-info-service.{{ .Release.Namespace }}.svc.cluster.local
       docsService: https://hocs-docs.{{ .Release.Namespace }}.svc.cluster.local
       hocsScreensAdditionalFolders: ''
+      auditTopicName: '{{ .Release.Namespace }}-sns'
