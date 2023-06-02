@@ -64,7 +64,7 @@
       name: {{ .Release.Namespace }}-casework-rds
       key: password
 - name: AWS_SNS_AUDIT_SEARCH_TOPIC_NAME
-  value: {{ .Release.Namespace }}-sns
+  value: '{{ tpl .Values.app.env.auditTopicName . }}'
 - name: AWS_SNS_AUDIT_SEARCH_ACCOUNT_ACCESS_KEY
   valueFrom:
     secretKeyRef:
