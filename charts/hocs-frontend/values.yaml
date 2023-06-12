@@ -21,6 +21,9 @@ hocs-generic-service:
               role: hocs-casework
         - podSelector:
             matchLabels:
+              role: hocs-casework-reporting
+        - podSelector:
+            matchLabels:
               role: hocs-docs
         - podSelector:
             matchLabels:
