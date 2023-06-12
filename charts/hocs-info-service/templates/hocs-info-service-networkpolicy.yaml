@@ -23,6 +23,9 @@ spec:
               role: hocs-casework
         - podSelector:
             matchLabels:
+              role: hocs-casework-reporting
+        - podSelector:
+            matchLabels:
               role: hocs-extracts
         - podSelector:
             matchLabels:
