@@ -17,6 +17,8 @@
   value: '{{ include "hocs-app.port" . }}'
 - name: SPRING_PROFILES_ACTIVE
   value: '{{ tpl .Values.app.env.springProfiles . }}'
+- name: SPRING_FLYWAY_ENABLED
+  value: 'false'
 - name: HOCS_AUDIT_SERVICE
   value: '{{ tpl .Values.app.env.auditService . }}'
 - name: HOCS_INFO_SERVICE
