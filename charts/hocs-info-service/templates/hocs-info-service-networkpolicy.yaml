@@ -20,6 +20,9 @@ spec:
               role: hocs-refresh-members-job
         - podSelector:
             matchLabels:
+              role: hocs-case-migrator
+        - podSelector:
+            matchLabels:
               role: hocs-casework
         - podSelector:
             matchLabels:
