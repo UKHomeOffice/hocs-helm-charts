@@ -25,6 +25,9 @@ hocs-generic-service:
         - podSelector:
             matchLabels:
               role: hocs-docs
+        - podSelector:
+            matchLabels:
+              role: hocs-info-service
 
   service:
     enabled: false
@@ -45,4 +48,5 @@ hocs-generic-service:
       caseworkService: https://hocs-casework.{{ .Release.Namespace }}.svc.cluster.local
       workflowService: https://hocs-workflow.{{ .Release.Namespace }}.svc.cluster.local
       docsService: https://hocs-docs.{{ .Release.Namespace }}.svc.cluster.local
+      infoService: https://hocs-info-service.{{ .Release.Namespace }}.svc.cluster.local
       ignoreMessages: 'false'
