@@ -25,6 +25,11 @@
   value: '{{ tpl .Values.app.env.docsService . }}'
 - name: CASE_CREATOR_INFO_SERVICE
   value: '{{ tpl .Values.app.env.infoService . }}'
+- name: CASE_CREATOR_MIGRATION_PARENT_TOPIC_UUID
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Release.Namespace }}-case-migrator-config
+      key: parent_topic_uuid
 - name: AWS_SQS_IGNORE_MESSAGES
   value: '{{ tpl .Values.app.env.ignoreMessages . }}'
 - name: AWS_SQS_QUEUE_ACCOUNT_ACCESS_KEY
