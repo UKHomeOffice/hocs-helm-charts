@@ -1,0 +1,53 @@
+{{- if .Values.jobs.cs-ingests.enabled }}
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: cs-txa-ingests-job
+spec:
+  schedule: "{{ .Values.jobs.cs-ingests.schedule }}"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      completions: 1
+      backoffLimit: 3
+      template:
+        metadata:
+          labels:
+            name: cs-txa-ingests-job
+        spec:
+          restartPolicy: onFailure
+          securityContext:
+            runAsUser: 10000
+            runAsNonRoot: true
+          containers:
+            - name: cs-txa-ingests-job
+              image: quay.io/ukhomeofficedigital/hocs-txa-document-extractor:{{ .Values.jobs.cs-ingests.imageTag }}
+              imagePullPolicy: Always
+              resources:
+                limits:
+                  memory: "2G"
+                  cpu: "2"
+                requests:
+                  memory: "1G"
+                  cpu: "1"
+              envFrom:
+                - configMapRef:
+                    name: cs-txa-config
+                - secretRef:
+                    name: txa-secrets
+                - secretRef:
+                    name: aws-s3-secrets
+              env:
+                - name: MODE_DELETE
+                  value: "false"
+                - name: JAVA_OPTS
+                  value: "-Xms512m -Xmx1g"
+              volumeMounts:
+                - name: txa-msk-certificates
+                  mountPath: /etc/msk-certs
+                  readOnly: true
+          volumes:
+            - name: txa-msk-certificates
+              secret:
+                secretName: txa-msk-certificates
+{{- end }}
