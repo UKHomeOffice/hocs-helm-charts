@@ -20,6 +20,13 @@ spec:
   template:
     metadata:
       labels: {{- include "hocs-app.selectorLabels" . | nindent 8 }}
+      {{- if .Values.prometheus.enabled }}
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: {{ .Values.prometheus.path | quote }}
+        prometheus.io/port: {{ include "hocs-app.targetPort" . }}
+        prometheus.io/scheme: {{ include "hocs-app.healthcheck.scheme" . }}
+      {{- end }}
     spec:
       affinity:
         podAntiAffinity:
