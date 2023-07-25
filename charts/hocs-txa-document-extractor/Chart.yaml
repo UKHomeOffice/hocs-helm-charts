@@ -1,4 +1,4 @@
 apiVersion: v2
 name: hocs-txa-document-extractor
-version: 1.0.0
+version: 1.0.1
 description: Exports a batch of documents to DSA Analytics pipeline.
