@@ -15,7 +15,7 @@ spec:
           labels:
             name: wcs-txa-ingests-job
         spec:
-          restartPolicy: onFailure
+          restartPolicy: OnFailure
           securityContext:
             runAsUser: 10000
             runAsNonRoot: true
