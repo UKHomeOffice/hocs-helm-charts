@@ -32,7 +32,7 @@ hocs-generic-service:
         -Dhttps.proxyHost=hocs-outbound-proxy.{{ include "cs-namespace" . }}.svc.cluster.local
         -Dhttps.proxyPort=31290
         -Dhttp.nonProxyHosts=*.svc.cluster.local
-      springProfiles: 'sqs, consumer'
+      springProfiles: 'sqs, consumer, timeline'
 
 dcuCaseView:
   enabled: false
