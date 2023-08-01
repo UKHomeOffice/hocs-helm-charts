@@ -1,18 +1,18 @@
 ---
 jobs:
-  cs-ingests:
+  csIngests:
     enabled: true
     schedule: '5 8 * * *'
     imageTag: 2.0.0
-  cs-deletes:
+  csDeletes:
     enabled: true
     schedule: '5 8 * * *'
     imageTag: 2.0.0
-  wcs-ingests:
+  wcsIngests:
     enabled: true
     schedule: '5 8 * * *'
     imageTag: 2.0.0
-  wcs-deletes:
+  wcsDeletes:
     enabled: true
     schedule: '5 8 * * *'
     imageTag: 2.0.0

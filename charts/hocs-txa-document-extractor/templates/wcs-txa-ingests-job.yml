@@ -1,10 +1,10 @@
-{{- if .Values.jobs.wcs-ingests.enabled }}
+{{- if .Values.jobs.wcsIngests.enabled }}
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: wcs-txa-ingests-job
 spec:
-  schedule: "{{ .Values.jobs.wcs-ingests.schedule }}"
+  schedule: "{{ .Values.jobs.wcsIngests.schedule }}"
   concurrencyPolicy: Forbid
   jobTemplate:
     spec:
@@ -21,7 +21,7 @@ spec:
             runAsNonRoot: true
           containers:
             - name: wcs-txa-ingests-job
-              image: quay.io/ukhomeofficedigital/hocs-txa-document-extractor:{{ .Values.jobs.wcs-ingests.imageTag }}
+              image: quay.io/ukhomeofficedigital/hocs-txa-document-extractor:{{ .Values.jobs.wcsIngests.imageTag }}
               imagePullPolicy: Always
               resources:
                 limits:
