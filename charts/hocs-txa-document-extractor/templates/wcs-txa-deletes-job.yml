@@ -1,10 +1,10 @@
-{{- if .Values.jobs.wcs-deletes.enabled }}
+{{- if .Values.jobs.wcsDeletes.enabled }}
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: wcs-txa-deletes-job
 spec:
-  schedule: "{{ .Values.jobs.wcs-deletes.schedule }}"
+  schedule: "{{ .Values.jobs.wcsDeletes.schedule }}"
   concurrencyPolicy: Forbid
   jobTemplate:
     spec:
@@ -21,7 +21,7 @@ spec:
             runAsNonRoot: true
           containers:
             - name: wcs-txa-deletes-job
-              image: quay.io/ukhomeofficedigital/hocs-txa-document-extractor:{{ .Values.jobs.wcs-deletes.imageTag }}
+              image: quay.io/ukhomeofficedigital/hocs-txa-document-extractor:{{ .Values.jobs.wcsDeletes.imageTag }}
               imagePullPolicy: Always
               resources:
                 limits:

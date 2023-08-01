@@ -1,10 +1,10 @@
-{{- if .Values.jobs.cs-deletes.enabled }}
+{{- if .Values.jobs.csDeletes.enabled }}
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: cs-txa-deletes-job
 spec:
-  schedule: "{{ .Values.jobs.cs-deletes.schedule }}"
+  schedule: "{{ .Values.jobs.csDeletes.schedule }}"
   concurrencyPolicy: Forbid
   jobTemplate:
     spec:
@@ -21,7 +21,7 @@ spec:
             runAsNonRoot: true
           containers:
             - name: cs-txa-deletes-job
-              image: quay.io/ukhomeofficedigital/hocs-txa-document-extractor:{{ .Values.jobs.cs-deletes.imageTag }}
+              image: quay.io/ukhomeofficedigital/hocs-txa-document-extractor:{{ .Values.jobs.csDeletes.imageTag }}
               imagePullPolicy: Always
               resources:
                 limits:

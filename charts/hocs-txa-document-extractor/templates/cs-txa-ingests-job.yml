@@ -1,10 +1,10 @@
-{{- if .Values.jobs.cs-ingests.enabled }}
+{{- if .Values.jobs.csIngests.enabled }}
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: cs-txa-ingests-job
 spec:
-  schedule: "{{ .Values.jobs.cs-ingests.schedule }}"
+  schedule: "{{ .Values.jobs.csIngests.schedule }}"
   concurrencyPolicy: Forbid
   jobTemplate:
     spec:
@@ -21,7 +21,7 @@ spec:
             runAsNonRoot: true
           containers:
             - name: cs-txa-ingests-job
-              image: quay.io/ukhomeofficedigital/hocs-txa-document-extractor:{{ .Values.jobs.cs-ingests.imageTag }}
+              image: quay.io/ukhomeofficedigital/hocs-txa-document-extractor:{{ .Values.jobs.csIngests.imageTag }}
               imagePullPolicy: Always
               resources:
                 limits:
