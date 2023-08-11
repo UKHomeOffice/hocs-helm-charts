@@ -774,6 +774,13 @@ entries:
     version: 5.3.0
   hocs-info-service:
   - apiVersion: v2
+    created: "2023-08-11T09:45:20.778709852Z"
+    digest: e094ba0b1ea56e13e4ae50a94e8677f98397a97e44aa85c66fb66f8e76695e22
+    name: hocs-info-service
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-info-service-2.4.1/hocs-info-service-2.4.1.tgz
+    version: 2.4.1
+  - apiVersion: v2
     created: "2023-06-15T12:13:40.707536561Z"
     digest: 31d7a17d4912f872988fa7f3721f4ddd89a05311ea623521d53a237bf0569f52
     name: hocs-info-service
@@ -1370,6 +1377,14 @@ entries:
     version: 2.1.2
   hocs-txa-document-extractor:
   - apiVersion: v2
+    created: "2023-08-11T09:45:20.995218378Z"
+    description: Exports a batch of documents to DSA Analytics pipeline.
+    digest: e371e6a16617cfe873eaf2fbf2eb9a9e7cebe0550a01edef8721bf3e1ce843e5
+    name: hocs-txa-document-extractor
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-txa-document-extractor-1.0.2/hocs-txa-document-extractor-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
     created: "2023-07-25T12:09:05.785433118Z"
     description: Exports a batch of documents to DSA Analytics pipeline.
     digest: c239e1af7081eb217ab7e40b1b9a3dd0cfb979bffccc226e928e4cd021c65570
@@ -1455,4 +1470,4 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-workflow-4.1.2/hocs-workflow-4.1.2.tgz
     version: 4.1.2
-generated: "2023-07-25T12:09:05.785616923Z"
+generated: "2023-08-11T09:45:20.995636391Z"
