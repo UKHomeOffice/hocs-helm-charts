@@ -14,4 +14,6 @@
     secretKeyRef:
       name: {{ .Release.Namespace }}-info-rds
       key: password
+- name: REDGATE_DISABLE_TELEMETRY
+  value: "true"
 {{- end -}}
