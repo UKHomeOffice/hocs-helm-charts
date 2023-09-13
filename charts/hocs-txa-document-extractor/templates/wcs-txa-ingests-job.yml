@@ -34,7 +34,7 @@ spec:
                 - configMapRef:
                     name: wcs-txa-config
                 - secretRef:
-                    name: txa-secrets
+                    name: wcs-txa-secrets
                 - secretRef:
                     name: aws-s3-secrets
               env:

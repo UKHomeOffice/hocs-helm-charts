@@ -34,7 +34,7 @@ spec:
                 - configMapRef:
                     name: cs-txa-config
                 - secretRef:
-                    name: txa-secrets
+                    name: cs-txa-secrets
                 - secretRef:
                     name: aws-s3-secrets
               env:
