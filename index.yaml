@@ -1377,6 +1377,14 @@ entries:
     version: 2.1.2
   hocs-txa-document-extractor:
   - apiVersion: v2
+    created: "2023-09-13T16:05:24.855255366Z"
+    description: Exports a batch of documents to DSA Analytics pipeline.
+    digest: a6731f50771d09a99b1efaf43caa766251b505755fbc8f803b0cbd8f263b1864
+    name: hocs-txa-document-extractor
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-txa-document-extractor-1.0.3/hocs-txa-document-extractor-1.0.3.tgz
+    version: 1.0.3
+  - apiVersion: v2
     created: "2023-08-11T09:45:20.995218378Z"
     description: Exports a batch of documents to DSA Analytics pipeline.
     digest: e371e6a16617cfe873eaf2fbf2eb9a9e7cebe0550a01edef8721bf3e1ce843e5
@@ -1470,4 +1478,4 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-workflow-4.1.2/hocs-workflow-4.1.2.tgz
     version: 4.1.2
-generated: "2023-08-11T09:45:20.995636391Z"
+generated: "2023-09-13T16:05:24.855594168Z"
