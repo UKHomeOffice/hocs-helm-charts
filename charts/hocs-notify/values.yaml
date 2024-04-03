@@ -17,6 +17,7 @@ hocs-generic-service:
         - podSelector:
             matchLabels:
               role: hocs-info-service
+      aws: true
 
   service:
     enabled: false
