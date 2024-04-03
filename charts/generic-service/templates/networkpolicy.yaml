@@ -27,6 +27,9 @@ spec:
     - ports:
         {{- toYaml .Values.networkpolicy.egress.ports | nindent 8 }}
       to:
-        {{- toYaml .Values.networkpolicy.egress.to | nindent 8 }}
+        {{- toYaml .Values.networkpolicy.egress.to | nindent 8 -}}
+        {{- if .Values.networkpolicy.egress.aws }}
+           {{- toYaml "hocs-app.networkpolicy.egress.aws-cidr-blocks" | nindent 8 }}
+        {{- end }}
   {{- end }}
 {{- end }}
