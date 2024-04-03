@@ -131,6 +131,7 @@ networkpolicy:
     enabled: false
   egress:
     enabled: false
+    aws: false
 
 app:
   image: {}
