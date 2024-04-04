@@ -1,6 +1,6 @@
 apiVersion: v2
 name: hocs-notify
-version: 4.2.2
+version: 4.2.3
 dependencies:
   - name: hocs-generic-service
     version: ^5.4.2
