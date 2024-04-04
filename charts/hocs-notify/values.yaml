@@ -13,6 +13,8 @@ hocs-generic-service:
       ports:
         - port: 10443
           protocol: TCP
+        - port: 443
+          protocol: TCP
       to:
         - podSelector:
             matchLabels:
@@ -33,6 +35,6 @@ hocs-generic-service:
         -Djavax.net.ssl.trustStore=/etc/keystore/truststore.jks
         -Dhttps.proxyHost=hocs-outbound-proxy.{{ include "cs-namespace" . }}.svc.cluster.local
         -Dhttps.proxyPort=31290
-        -Dhttp.nonProxyHosts=AWS_SQS_NOTIFY_URL
+        -Dhttp.nonProxyHosts=*.svc.cluster.local
       springProfiles: 'sqs'
       infoService: https://hocs-info-service.{{ .Release.Namespace }}.svc.cluster.local
