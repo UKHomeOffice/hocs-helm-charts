@@ -922,6 +922,17 @@ entries:
     version: 4.0.4
   hocs-notify:
   - apiVersion: v2
+    created: "2024-04-04T16:41:01.604803944Z"
+    dependencies:
+    - name: hocs-generic-service
+      repository: https://ukhomeoffice.github.io/hocs-helm-charts
+      version: ^5.4.2
+    digest: 27fb5cd959c5f821b8834949be9d33724004f007b8303c03637e715192f49068
+    name: hocs-notify
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-notify-4.2.3/hocs-notify-4.2.3.tgz
+    version: 4.2.3
+  - apiVersion: v2
     created: "2024-04-04T12:44:03.054892919Z"
     dependencies:
     - name: hocs-generic-service
@@ -1535,4 +1546,4 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-workflow-4.1.2/hocs-workflow-4.1.2.tgz
     version: 4.1.2
-generated: "2024-04-04T12:44:03.05517801Z"
+generated: "2024-04-04T16:41:01.605019103Z"
