@@ -33,6 +33,6 @@ hocs-generic-service:
         -Djavax.net.ssl.trustStore=/etc/keystore/truststore.jks
         -Dhttps.proxyHost=hocs-outbound-proxy.{{ include "cs-namespace" . }}.svc.cluster.local
         -Dhttps.proxyPort=31290
-        -Dhttp.nonProxyHosts=*.svc.cluster.local
+        -Dhttp.nonProxyHosts=AWS_SQS_NOTIFY_URL
       springProfiles: 'sqs'
       infoService: https://hocs-info-service.{{ .Release.Namespace }}.svc.cluster.local
