@@ -13,6 +13,8 @@ hocs-generic-service:
       ports:
         - port: 10443
           protocol: TCP
+        - port: 443
+          protocol: TCP
       to:
         - podSelector:
             matchLabels:
