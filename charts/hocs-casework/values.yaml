@@ -58,6 +58,7 @@ hocs-generic-service:
         - podSelector:
             matchLabels:
               role: hocs-search
+        aws: true
 
   app:
     image:
