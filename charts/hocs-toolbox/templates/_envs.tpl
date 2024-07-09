@@ -16,11 +16,6 @@
     secretKeyRef:
       name: {{ $.Release.Namespace }}-trusted-s3
       key: secret_access_key
-- name: S3_BUCKET_NAME
-  valueFrom:
-    secretKeyRef:
-      name: {{ $.Release.Namespace }}-trusted-s3
-      key: bucket_name
 - name: S3_HTTPS_PROXY
   value: hocs-outbound-proxy.{{ $.Release.Namespace }}.svc.cluster.local:31290
 {{- range .Values.app.env.databases }}
