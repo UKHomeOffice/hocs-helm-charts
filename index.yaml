@@ -1416,6 +1416,13 @@ entries:
     version: 4.0.3
   hocs-toolbox:
   - apiVersion: v2
+    created: "2026-04-07T16:46:45.698548299Z"
+    digest: d1122e8e079dbdda96630d6e9cf1c32d17b66f8808435a0b481defd772b9cfae
+    name: hocs-toolbox
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-toolbox-2.4.1/hocs-toolbox-2.4.1.tgz
+    version: 2.4.1
+  - apiVersion: v2
     created: "2026-03-26T15:27:42.899484347Z"
     digest: 3bcd87f21e256db0d5ad445525cbc61fbe4888d99a7c39760d93d0e525d99d6e
     name: hocs-toolbox
@@ -1567,4 +1574,4 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-workflow-4.1.2/hocs-workflow-4.1.2.tgz
     version: 4.1.2
-generated: "2026-03-26T15:27:42.899760893Z"
+generated: "2026-04-07T16:46:45.698818232Z"
