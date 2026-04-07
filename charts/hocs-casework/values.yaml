@@ -42,6 +42,7 @@ hocs-generic-service:
               role: hocs-workflow
     egress:
       enabled: true
+      aws: true
       ports:
         - port: 10443
           protocol: TCP
@@ -58,6 +59,7 @@ hocs-generic-service:
         - podSelector:
             matchLabels:
               role: hocs-search
+
 
   app:
     image:
