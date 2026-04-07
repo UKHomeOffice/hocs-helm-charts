@@ -19,6 +19,13 @@ deployment:
         - SETUID
         - SETGID
 
+networkpolicy:
+  enabled: false
+  egress:
+    enabled: false
+  ingress:
+    enabled: false
+
 app:
   image:
     repository: quay.io/ukhomeofficedigital/hocs-toolbox
