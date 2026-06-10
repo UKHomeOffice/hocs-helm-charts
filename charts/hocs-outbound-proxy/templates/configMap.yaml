@@ -17,7 +17,7 @@ data:
     acl uk_parliament dstdomain .parliament.uk # UK Parliament
     acl scot_parliament dstdomain .parliament.scot # Scottish Parliament
     acl ni_parliament dstdomain .niassembly.gov.uk # NI Assembly
-    acl wales_parliament dstdomain .assembly.wales # Welsh Parliament
+    acl wales_parliament dstdomain .senedd.wales # Welsh Parliament
 
     acl CONNECT method CONNECT
     acl hasRequest has request
