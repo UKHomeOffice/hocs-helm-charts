@@ -3,5 +3,5 @@ name: hocs-casework
 version: 5.0.0
 dependencies:
   - name: hocs-generic-service
-    version: ^5.3.6
+    version: ^5.3.7
     repository: https://ukhomeoffice.github.io/hocs-helm-charts
