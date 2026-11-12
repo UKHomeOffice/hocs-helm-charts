@@ -116,4 +116,6 @@
       key: secret_access_key
 - name: ALLOWED_EMAIL_DOMAINS_FOR_USER_CREATION
   value: '{{ tpl .Values.app.env.allowedDomains . }}'
+- name: SPRING_MVC_ASYNC_REQUEST_TIMEOUT
+  value: '{{ tpl .Values.app.env.asyncRequestTimeout . }}'
 {{- end -}}
