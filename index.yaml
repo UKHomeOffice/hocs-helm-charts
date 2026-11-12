@@ -798,6 +798,13 @@ entries:
     version: 5.3.0
   hocs-info-service:
   - apiVersion: v2
+    created: "2026-11-12T10:29:41.489661499Z"
+    digest: 46f4e473efc96250f4052b8604caa64279637d28009560f6642664e89737d9cf
+    name: hocs-info-service
+    urls:
+    - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-info-service-2.5.0/hocs-info-service-2.5.0.tgz
+    version: 2.5.0
+  - apiVersion: v2
     created: "2023-08-11T09:45:20.778709852Z"
     digest: e094ba0b1ea56e13e4ae50a94e8677f98397a97e44aa85c66fb66f8e76695e22
     name: hocs-info-service
@@ -1581,4 +1588,4 @@ entries:
     urls:
     - https://github.com/UKHomeOffice/hocs-helm-charts/releases/download/hocs-workflow-4.1.2/hocs-workflow-4.1.2.tgz
     version: 4.1.2
-generated: "2026-06-10T11:22:50.580651959Z"
+generated: "2026-11-12T10:29:41.489852615Z"
