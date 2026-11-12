@@ -100,6 +100,7 @@ app:
     allowedDomains: ''
     caseworkService: https://hocs-casework.{{ .Release.Namespace }}.svc.cluster.local
     docsService: https://hocs-docs.{{ .Release.Namespace }}.svc.cluster.local
+    asyncRequestTimeout: 60s
   resources:
     limits:
       cpu: 1000m
